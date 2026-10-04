@@ -1,0 +1,1468 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Module 2 : Les étiologies de l’occlusion de l’adulte – Occlusions intestinales aiguës</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..800;1,9..144,300..800&family=Hanken+Grotesk:wght@400..700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#FAF9F5; --paper:#FFFFFF; --ink:#141C2E; --muted:#596277; --line:#E3E1D6; --soft:#F1EFE7;
+  --def:#2457A6; --def-bg:#EAF0FA;
+  --urg:#B3261E; --urg-bg:#FCECEA;
+  --ttt:#1E7A4B; --ttt-bg:#E6F4EB;
+  --pie:#9A5A00; --pie-bg:#FFF2D9;
+  --serif:'Fraunces','Iowan Old Style','Palatino Linotype',Georgia,serif;
+  --sans:'Hanken Grotesk',system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+  --side:292px; --ac:#3E4FA3;
+  --ease:cubic-bezier(.16,.84,.24,1);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{margin:0;color:var(--ink);font:400 1.0625rem/1.68 var(--sans);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+  background-color:var(--bg);
+  background-image:url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .08 0 0 0 0 .1 0 0 0 0 .16 0 0 0 .055 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+:focus-visible{outline:3px solid #2457A6;outline-offset:3px;border-radius:5px}
+a{color:var(--def)}
+h1,h2,h3,h4{font-family:var(--serif);font-optical-sizing:auto;letter-spacing:-.015em;margin:0}
+p{margin:.7rem 0}
+ul,ol{padding-left:1.25rem}
+li{margin:.3rem 0}
+button{font:inherit;color:inherit;cursor:pointer}
+.sp{position:fixed;top:0;left:0;right:0;height:3px;background:var(--def);transform-origin:0 50%;transform:scaleX(0);z-index:80}
+
+/* Structure */
+.app{display:grid;grid-template-columns:var(--side) minmax(0,1fr)}
+.side{position:sticky;top:0;align-self:start;height:100vh;overflow:auto;padding:1.6rem 1.25rem 2rem;border-right:1px solid var(--line);background:rgba(252,251,247,.9)}
+.side h2{font:600 1.5rem/1.1 var(--serif);margin-bottom:.3rem}
+.side .sub{color:var(--muted);font-size:.9rem;margin:0 0 1rem}
+.side nav ol{list-style:none;margin:0;padding:0;position:relative}
+.side nav a{display:flex;gap:.65rem;align-items:center;padding:.4rem .6rem;border-radius:9px;text-decoration:none;color:var(--ink);font-size:.93rem;line-height:1.3;transition:background .2s,transform .25s var(--ease)}
+.side nav a:hover{background:var(--soft);transform:translateX(3px)}
+.side nav a .dot{flex:none;width:9px;height:9px;border-radius:50%;border:1.6px solid #9AA3B5;transition:all .3s var(--ease)}
+.side nav a.seen .dot{background:#9AA3B5}
+.side nav a.active{background:#E8EDF8;font-weight:600}
+.side nav a.active .dot{border-color:var(--def);background:var(--def);transform:scale(1.35)}
+.side .mods{margin-top:1.25rem;padding-top:1rem;border-top:1px solid var(--line);font-size:.9rem}
+.side .mods p{margin:.25rem 0;color:var(--muted)}
+.side .mods .on{color:var(--ink);font-weight:600}
+.legend{margin-top:1.25rem;padding-top:1rem;border-top:1px solid var(--line);font-size:.86rem;color:var(--muted)}
+.legend .sw{display:flex;align-items:center;gap:.5rem;margin:.3rem 0}
+.legend i{flex:none;width:14px;height:14px;border-radius:4px}
+.pbar{height:6px;background:var(--soft);border-radius:99px;overflow:hidden;margin:.5rem 0 .2rem}
+.pbar b{display:block;height:100%;width:0;background:var(--def);transition:width .5s var(--ease)}
+.topbar{display:none;position:sticky;top:0;z-index:30;background:rgba(250,249,245,.96);border-bottom:1px solid var(--line);padding:.6rem 1rem;align-items:center;gap:.8rem}
+.topbar button{border:1px solid var(--line);background:#fff;border-radius:10px;padding:.45rem .7rem;font-weight:600;font-size:.9rem}
+.topbar .t{font:600 1rem var(--serif);flex:1}
+.topbar .pbar{width:70px;margin:0}
+.ov{display:none}
+main{padding:0 clamp(1rem,4vw,3.5rem) 6rem;min-width:0}
+.wrap{max-width:800px;margin:0 auto}
+.wide{max-width:1180px;margin:0 auto}
+
+/* Typographie cinétique */
+.kt .w{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.14em;margin-bottom:-.14em}
+.kt .w>span{display:inline-block;transform:translateY(115%) rotate(4deg);transform-origin:0 100%;transition:transform 1.05s var(--ease);transition-delay:calc(var(--i)*70ms)}
+.kt.in .w>span{transform:none}
+
+/* Héros */
+.hero{padding:clamp(2rem,5vw,4rem) 0 1rem;display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:clamp(1rem,3vw,3rem);align-items:center}
+.hero .crumb{color:var(--muted);font-size:.95rem;margin:0 0 1rem}
+.hero h1{font-size:clamp(2.7rem,5.4vw,5rem);font-weight:300;line-height:1.02;letter-spacing:-.03em;font-variation-settings:"opsz" 144;transition:font-weight 1.8s var(--ease) .2s}
+.hero h1.in{font-weight:620}
+.hero .deck{font:400 clamp(1.1rem,1.7vw,1.32rem)/1.55 var(--serif);color:#2A3550;max-width:30em;margin:1.4rem 0 0;opacity:0;transform:translateY(14px);transition:opacity 1s .9s,transform 1s .9s var(--ease)}
+.hero .deck.in{opacity:1;transform:none}
+.hero .meta{color:var(--muted);font-size:.92rem;max-width:34em}
+.how{display:flex;flex-wrap:wrap;gap:.6rem 1.2rem;align-items:center;margin:1.2rem 0 0;padding:.85rem 1.05rem;background:rgba(255,255,255,.8);border:1px solid var(--line);border-radius:14px;font-size:.9rem}
+.how span{display:inline-flex;gap:.45rem;align-items:center}
+.how i{width:12px;height:12px;border-radius:3px;display:inline-block}
+.mapbox{position:relative}
+.mapbox svg{width:100%;height:auto;display:block;overflow:visible}
+.mapbox .hint{font-size:.9rem;color:var(--muted);text-align:center;margin:.2rem 0 0}
+#map .body{fill:rgba(255,255,255,.55);stroke:#CFCBBE;stroke-width:2}
+#map .liver{fill:#EFE6D8;stroke:#D2C4AB;stroke-width:1.5}
+#map .gb{fill:#CBD38A;stroke:#8A7A12;stroke-width:1.5}
+#map .colon{fill:none;stroke:#18233A;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;opacity:.92}
+#map .colon.in2{fill:none;stroke:#F6E5E0;stroke-width:9}
+#map .sb{fill:none;stroke:#18233A;stroke-width:12;stroke-linecap:round;stroke-linejoin:round}
+#map .sb.in2{stroke:#F6E5E0;stroke-width:6}
+#map .draw{stroke-dasharray:1;stroke-dashoffset:1;animation:drawp 2.4s var(--ease) forwards}
+#map .d2{animation-delay:.9s}
+#map .d3{animation-delay:1.5s}
+@keyframes drawp{to{stroke-dashoffset:0}}
+#map .hs{cursor:pointer;opacity:0;animation:pop .7s var(--ease) forwards;outline:none}
+#map .hs text{font:600 15px var(--sans);fill:#18233A}
+#map .hs .ln{stroke:#9AA3B5;stroke-width:1.2;stroke-dasharray:3 4}
+#map .hs .dot{fill:var(--ac)}
+#map .hs .ring{fill:none;stroke:var(--ac);stroke-width:2.5;transform-box:fill-box;transform-origin:center;animation:ring 2.6s ease-out infinite}
+#map .hs:hover text,#map .hs.hl text,#map .hs:focus-visible text{fill:var(--ac);text-decoration:underline}
+#map .hs:hover .dot,#map .hs.hl .dot{transform-box:fill-box;transform-origin:center;transform:scale(1.5)}
+#map .stone{fill:#C9A21E;stroke:#7A6410;stroke-width:2}
+#map .tum{fill:#B3261E;opacity:.9}
+@keyframes pop{from{opacity:0;transform:scale(.6)}to{opacity:1;transform:none}}
+@keyframes ring{0%{transform:scale(.5);opacity:.9}100%{transform:scale(2.2);opacity:0}}
+.mapkeys{display:flex;flex-wrap:wrap;gap:.45rem;justify-content:center;margin-top:.7rem}
+.mapkeys a{border:1px solid var(--line);background:#fff;border-radius:999px;padding:.35rem .8rem;font-size:.88rem;font-weight:600;text-decoration:none;color:var(--ink);transition:all .25s var(--ease)}
+.mapkeys a:hover,.mapkeys a.hl{background:var(--ink);color:#fff;transform:translateY(-2px)}
+
+/* Sections */
+.sec{padding:3.4rem 0 .5rem;border-top:1px solid var(--line);margin-top:2.8rem}
+.sec h2{font-size:clamp(1.8rem,3.4vw,2.4rem);font-weight:600}
+.lead{font:400 1.22rem/1.55 var(--serif);color:#2A3550;margin:.8rem 0 1.4rem}
+h3{font-size:1.3rem;font-weight:600;margin:1.8rem 0 .5rem}
+
+/* Chapitres d’étiologie */
+.etio{--ac:#3E4FA3}
+.etio .chap{display:flex;align-items:center;gap:1rem;margin:0 0 1rem;color:var(--ac);font:italic 500 1.05rem var(--serif)}
+.etio .chap::after{content:"";height:2px;width:0;background:var(--ac);transition:width 1.4s var(--ease) .3s;flex:0 1 220px}
+.etio.in .chap::after{width:220px;max-width:30vw}
+.etio h2{font-size:clamp(2.5rem,5.4vw,4.6rem);font-weight:600;line-height:1.02;letter-spacing:-.03em;max-width:13em}
+.etio .tag{font:400 clamp(1.1rem,1.7vw,1.35rem)/1.5 var(--serif);color:#2A3550;max-width:34em;margin:1.2rem 0 2rem}
+.egrid{display:grid;grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr);gap:clamp(1.4rem,3vw,3rem);align-items:start}
+.efig{position:sticky;top:88px;min-width:0}
+.stage{background:rgba(255,255,255,.85);border:1px solid var(--line);border-radius:24px;padding:1rem 1rem 1.1rem;box-shadow:0 18px 40px -26px rgba(20,28,46,.35)}
+.stage svg{width:100%;height:auto;display:block}
+.stage .cap{min-height:5.4rem;margin:.5rem .2rem 0;font-size:.97rem;color:#2A3550}
+.stage .cap b{color:var(--ac)}
+.ctr{display:flex;flex-wrap:wrap;gap:.45rem;margin-top:.5rem;align-items:center}
+.ctr button{border:1px solid var(--line);background:#fff;border-radius:999px;padding:.4rem .85rem;font-weight:600;font-size:.86rem;transition:transform .2s var(--ease),background .2s}
+.ctr button:hover{transform:translateY(-2px)}
+.ctr button:active{transform:scale(.96)}
+.ctr button[aria-pressed=true]{background:var(--ac);border-color:var(--ac);color:#fff}
+.ctr .play{background:var(--ink);color:#fff;border-color:var(--ink)}
+.ctr input[type=range]{flex:1 1 160px;accent-color:var(--ac)}
+.ctr label{font-size:.88rem;font-weight:600}
+.ec{display:block}
+.fgroup{display:flex;justify-content:space-between;align-items:center;gap:1rem;margin:1.6rem 0 .2rem}
+.fgroup h3{margin:0;font-size:1.25rem}
+.g{display:grid;grid-template-columns:152px minmax(0,1fr);gap:0 1.4rem;padding:1.05rem 0 1.1rem;border-top:1px solid var(--line);position:relative}
+.g::before{content:"";position:absolute;top:-1px;left:0;height:2px;width:0;background:var(--ac);transition:width 1.1s var(--ease)}
+.g.in::before{width:152px}
+.g>h4{font:italic 500 1.12rem/1.25 var(--serif);color:var(--ac);margin:.1rem 0}
+.g p{margin:.35rem 0}
+.g ul{margin:.35rem 0;padding-left:1.15rem}
+.g>div{min-width:0}
+
+/* Badges & marqueurs */
+.bd{display:inline-block;font:600 .72rem/1 var(--sans);padding:.28rem .55rem;border-radius:999px;white-space:nowrap}
+.bd.c{background:#E3E8F3;color:#18233A}
+.bd.x{background:#fff;color:#4B5568;border:1px dashed #8A93A6}
+.bd.sm{font-size:.66rem;padding:.2rem .45rem;margin-right:.35rem;vertical-align:.12em}
+.av{display:inline-block;background:var(--pie-bg);color:var(--pie);font-weight:600;font-size:.78em;padding:.05em .4em;border-radius:5px;border:1px solid #E9C98A;white-space:nowrap}
+
+/* Blocs */
+.bloc{--c:var(--def);--cb:var(--def-bg);background:var(--cb);border-left:4px solid var(--c);border-radius:4px 16px 16px 4px;padding:1rem 1.25rem;margin:1.2rem 0}
+.bloc.urg{--c:var(--urg);--cb:var(--urg-bg)}
+.bloc.ttt{--c:var(--ttt);--cb:var(--ttt-bg)}
+.bloc.pie{--c:var(--pie);--cb:var(--pie-bg)}
+.bloc.plain{--c:#9AA3B5;--cb:rgba(255,255,255,.9);border:1px solid var(--line);border-left:4px solid var(--c)}
+.bh{display:flex;justify-content:space-between;gap:.75rem;align-items:flex-start;margin-bottom:.3rem}
+.bh h4{margin:0;font:600 1.02rem/1.35 var(--sans);color:var(--c)}
+.bloc.plain .bh h4{color:var(--ink)}
+.bloc p{margin:.4rem 0}
+.bloc ul{margin:.4rem 0;padding-left:1.2rem}
+.note{background:var(--pie-bg);border:1px solid #EBCB8F;border-radius:14px;padding:.85rem 1.1rem;margin:1.2rem 0;font-size:.97rem}
+.note b.t{display:block;color:var(--pie);margin-bottom:.15rem}
+.slot{border:2px dashed #B7BDCB;border-radius:14px;padding:1.1rem;color:var(--muted);background:rgba(255,255,255,.7);font-size:.95rem;margin:1.2rem 0}
+.test{margin:1.5rem 0;padding:1rem 1.2rem;border:1px solid var(--def);border-radius:16px;background:#fff}
+.test .q{font-weight:600}
+.test button.rv{margin-top:.6rem;background:var(--def);color:#fff;border:0;border-radius:10px;padding:.5rem .95rem;font-weight:600;font-size:.92rem}
+.test .ans{margin-top:.7rem;padding-top:.7rem;border-top:1px solid var(--line)}
+
+/* Terrain */
+.vg{display:grid;gap:.9rem;margin-top:1rem}
+.vg .it{background:rgba(255,255,255,.9);border:1px solid var(--line);border-radius:16px;padding:1rem 1.15rem;transition:box-shadow .3s,transform .3s var(--ease)}
+.vg .it:hover{box-shadow:0 14px 30px -22px rgba(20,28,46,.5);transform:translateY(-2px)}
+.vg .it p{margin:0 0 .6rem;font:400 1.1rem/1.5 var(--serif)}
+.opts{display:flex;flex-wrap:wrap;gap:.4rem}
+.opts button{border:1px solid var(--line);background:#fff;border-radius:999px;padding:.4rem .85rem;font-size:.9rem;font-weight:600;transition:transform .2s var(--ease)}
+.opts button:hover:not(:disabled){transform:translateY(-2px)}
+.opts button:disabled{cursor:default}
+.opts button.ok{background:var(--ttt-bg);border-color:var(--ttt);color:var(--ttt)}
+.opts button.no{background:var(--urg-bg);border-color:var(--urg);color:var(--urg)}
+.fb{margin-top:.55rem;font-size:.95rem}
+.score{font-weight:600;margin:.8rem 0}
+
+/* Matrice de synthèse */
+.mx-tools{display:flex;gap:.5rem;flex-wrap:wrap;margin:.8rem 0}
+.mx-tools button{border:1px solid var(--line);background:#fff;border-radius:10px;padding:.45rem .85rem;font-weight:600;font-size:.9rem}
+.mx-tools button[aria-pressed=true]{background:var(--ink);color:#fff;border-color:var(--ink)}
+.mx-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:18px;background:#fff}
+.mx{display:grid;grid-template-columns:130px repeat(5,minmax(170px,1fr));min-width:1000px}
+.mx>div{padding:.75rem .85rem;border-top:1px solid var(--line);font-size:.93rem;line-height:1.45}
+.mx>.h{background:var(--ink);color:#fff;font:600 1rem var(--serif);border-top:0}
+.mx>.r{font-weight:700;background:#FBFAF6;position:sticky;left:0}
+.mx>.c{transition:filter .25s,background .3s}
+.mx.test>.c:not(.shown){filter:blur(7px);cursor:pointer;user-select:none}
+.mx>.c.col{background:#F2F5FC}
+
+/* Cas cliniques */
+.tabs [role=tablist]{display:flex;flex-wrap:wrap;gap:.4rem;margin:1.2rem 0 .8rem}
+.tabs [role=tab]{border:1px solid var(--line);background:#fff;border-radius:999px;padding:.5rem 1.05rem;font-weight:600;font-size:.93rem}
+.tabs [role=tab][aria-selected=true]{background:var(--ink);color:#fff;border-color:var(--ink)}
+.case{background:rgba(255,255,255,.92);border:1px solid var(--line);border-radius:22px;padding:1.3rem 1.4rem}
+.case .intro{font:400 1.12rem/1.55 var(--serif);margin:0 0 1rem}
+.cstep{border-top:1px dashed var(--line);padding-top:1rem;margin-top:1rem;animation:rise .6s var(--ease) both}
+@keyframes rise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+.cstep .data{background:var(--def-bg);border-left:4px solid var(--def);border-radius:4px 12px 12px 4px;padding:.75rem 1rem;margin-bottom:.8rem}
+.cstep .data.urg{background:var(--urg-bg);border-color:var(--urg)}
+.cstep .q{font-weight:700;margin:.5rem 0}
+.copts{display:grid;gap:.5rem}
+.copts button{text-align:left;border:1px solid var(--line);background:#fff;border-radius:12px;padding:.7rem .9rem;transition:transform .2s var(--ease),border-color .2s}
+.copts button:hover:not(:disabled){transform:translateX(4px);border-color:var(--def)}
+.copts button:disabled{cursor:default}
+.copts button.ok{border-color:var(--ttt);background:var(--ttt-bg)}
+.copts button.no{border-color:var(--urg);background:var(--urg-bg)}
+.copts button.miss{border-color:var(--ttt);border-style:dashed}
+.copts .ex{display:none;margin-top:.4rem;font-size:.94rem;color:#2A3550}
+.copts button.show .ex{display:block}
+.cnext{margin-top:.8rem;background:var(--ink);color:#fff;border:0;border-radius:10px;padding:.55rem 1.1rem;font-weight:600}
+.cfinal{margin-top:1.2rem;padding:1rem 1.2rem;background:var(--ttt-bg);border-left:4px solid var(--ttt);border-radius:4px 14px 14px 4px;animation:rise .6s var(--ease) both}
+
+/* QCM */
+.qcm{margin:1.2rem 0}
+.q-card{background:rgba(255,255,255,.92);border:1px solid var(--line);border-radius:18px;padding:1.1rem 1.25rem;margin:1.1rem 0}
+.q-card h3{font:600 1.08rem/1.45 var(--sans);margin:0 0 .3rem}
+.q-card .kind{color:var(--muted);font-size:.86rem;margin-bottom:.6rem}
+.q-card label{display:block;border:1px solid var(--line);border-radius:12px;padding:.65rem .85rem;margin:.45rem 0;cursor:pointer;transition:background .2s}
+.q-card label:hover{background:var(--soft)}
+.q-card input{margin-right:.6rem;accent-color:var(--def)}
+.q-card .ex{display:none;margin:.45rem 0 0 1.55rem;font-size:.94rem;color:#2A3550}
+.q-card.done label{cursor:default}
+.q-card.done label:hover{background:inherit}
+.q-card.done .ex{display:block;animation:rise .5s var(--ease) both}
+.q-card label.good{border-color:var(--ttt);background:var(--ttt-bg)}
+.q-card label.bad{border-color:var(--urg);background:var(--urg-bg)}
+.q-card label.miss{border-color:var(--ttt);border-style:dashed}
+.q-card .go{margin-top:.7rem;background:var(--ink);color:#fff;border:0;border-radius:10px;padding:.55rem 1.1rem;font-weight:600}
+.q-card .go:disabled{opacity:.45;cursor:default}
+.q-card .res{margin-top:.8rem;font-weight:600}
+.q-card .res.ok{color:var(--ttt)}
+.q-card .res.ko{color:var(--urg)}
+.qhead{position:sticky;top:0;z-index:5;background:rgba(250,249,245,.96);border-bottom:1px solid var(--line);padding:.6rem 0;margin-top:1rem}
+.qhead .row{display:flex;align-items:center;gap:1rem;justify-content:space-between;flex-wrap:wrap}
+.qhead button{border:1px solid var(--line);background:#fff;border-radius:10px;padding:.4rem .8rem;font-weight:600;font-size:.88rem}
+.verdict{margin:1.2rem 0;padding:1rem 1.2rem;background:#fff;border:1px solid var(--line);border-radius:14px;display:none}
+
+/* Fiche */
+.recap{background:rgba(255,255,255,.92);border:1px solid var(--line);border-radius:20px;padding:1.2rem 1.4rem}
+.recap ul{margin:.4rem 0}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:.9rem;margin-top:1rem}
+.fc{perspective:900px}
+.fc .inner{position:relative;height:210px;transition:transform .6s var(--ease);transform-style:preserve-3d}
+.fc.flipped .inner{transform:rotateY(180deg)}
+.fc .face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:16px;padding:1rem;display:flex;flex-direction:column;justify-content:center;overflow:auto;font-size:.95rem;line-height:1.45;border:1px solid var(--line);text-align:left;width:100%}
+.fc .front{background:#fff;font-weight:600;font-family:var(--serif);font-size:1.15rem}
+.fc .back{background:var(--def-bg);border-color:#C9D3E8;transform:rotateY(180deg)}
+.fc.known .front{border-color:var(--ttt);background:var(--ttt-bg)}
+.fc .k{margin-top:.35rem;width:100%;border:1px solid var(--line);background:#fff;border-radius:10px;padding:.35rem;font-size:.85rem;font-weight:600}
+.fc .k[aria-pressed=true]{background:var(--ttt);color:#fff;border-color:var(--ttt)}
+.next{margin:3rem 0 0;padding:1.5rem 1.6rem;background:var(--ink);color:#fff;border-radius:22px}
+.next h3{color:#fff;margin:0 0 .4rem}
+.next p{color:#D9DFEC;margin:.3rem 0}
+
+@media (max-width:1100px){
+  .egrid{grid-template-columns:1fr}
+  .efig{position:static}
+  .hero{grid-template-columns:1fr}
+}
+@media (max-width:980px){
+  .app{display:block}
+  .topbar{display:flex}
+  .side{position:fixed;inset:0 auto 0 0;width:min(88vw,340px);z-index:50;transform:translateX(-102%);transition:transform .3s var(--ease);box-shadow:6px 0 30px rgba(0,0,0,.15)}
+  .side.open{transform:none}
+  .ov.show{display:block;position:fixed;inset:0;background:rgba(20,28,46,.35);z-index:40}
+}
+@media (max-width:640px){
+  body{font-size:1rem}
+  .g{grid-template-columns:1fr}
+  .g.in::before{width:80px}
+  .g>h4{margin-bottom:.2rem}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *{animation:none!important;transition:none!important}
+  .kt .w>span{transform:none}
+  .hero .deck{opacity:1;transform:none}
+  #map .draw{stroke-dashoffset:0}
+  #map .hs{opacity:1}
+  .etio .chap::after{width:220px}
+  .g::before{width:152px}
+}
+</style>
+</head>
+<body>
+<div class="sp" id="sp" aria-hidden="true"></div>
+<div class="topbar">
+  <button id="menuBtn" aria-expanded="false" aria-controls="side">Menu</button>
+  <span class="t">Module 2 : étiologies de l’adulte</span>
+  <div class="pbar" aria-hidden="true"><b id="pbarTop"></b></div>
+</div>
+<div class="ov" id="ov"></div>
+
+<div class="app">
+<aside class="side" id="side" aria-label="Navigation du module">
+  <h2>Occlusions intestinales aiguës</h2>
+  <p class="sub">Chirurgie digestive, module 2 sur 5</p>
+  <div class="pbar" aria-hidden="true"><b id="pbarSide"></b></div>
+  <p class="sub" id="pTxt" style="margin:.1rem 0 1rem">0 section lue</p>
+  <nav aria-label="Sections"><ol id="navList"></ol></nav>
+  <div class="mods">
+    <p>Module 1 : le syndrome occlusif</p>
+    <p class="on">Module 2 : étiologies de l’adulte (ce fichier)</p>
+    <p>Module 3 : l’invagination intestinale aiguë</p>
+    <p>Module 4 : conduite à tenir intégrée</p>
+    <p>Module 5 : pièges d’examen</p>
+  </div>
+  <div class="legend">
+    <div class="sw"><span class="bd c">Cours</span> contenu du PDF du Dr Lubin</div>
+    <div class="sw"><span class="bd x">Complément</span> ajouté pour approfondir</div>
+    <div class="sw"><i style="background:var(--def)"></i> définition, mécanisme</div>
+    <div class="sw"><i style="background:var(--urg)"></i> gravité, urgence</div>
+    <div class="sw"><i style="background:var(--ttt)"></i> traitement</div>
+    <div class="sw"><i style="background:var(--pie)"></i> piège d’examen</div>
+  </div>
+</aside>
+
+<main id="top">
+<header class="hero wide" id="heroTop">
+  <div>
+    <p class="crumb">Occlusions intestinales aiguës, module 2 sur 5</p>
+    <h1 class="kt" id="heroH1" data-kt>Les étiologies de l’occlusion de l’adulte</h1>
+    <p class="deck" id="heroDeck">Cinq causes expliquent la grande majorité des occlusions que tu verras en garde. Chacune a son terrain, son indice clinique, son examen clé et son piège. Ce module t’apprend à les reconnaître et à choisir le bon geste.</p>
+    <p class="meta" style="margin-top:1rem">Base : cours du Dr Evens Lubin, qui ne fait que citer ces causes ; l’essentiel du contenu est donc complété avec les connaissances de référence en chirurgie digestive. Tout chiffre incertain porte le marqueur <span class="av">[À VÉRIFIER]</span>.</p>
+    <div class="how">
+      <span><b class="bd c">Cours</b> ce que dit le PDF</span>
+      <span><b class="bd x">Complément</b> ce qui est ajouté</span>
+      <span><i style="background:var(--urg)"></i>urgence</span>
+      <span><i style="background:var(--def)"></i>mécanisme</span>
+      <span><i style="background:var(--ttt)"></i>traitement</span>
+      <span><i style="background:var(--pie)"></i>piège</span>
+    </div>
+  </div>
+  <div class="mapbox">
+    <svg id="map" viewBox="-100 0 760 600" role="img" aria-label="Carte de l’abdomen avec les cinq causes d’occlusion de l’adulte : brides, hernie étranglée, volvulus du sigmoïde, cancer du côlon, iléus biliaire">
+      <defs><path id="sbp" d="M300 250 C345 250 345 282 300 287 C238 295 228 322 292 330 C352 338 347 374 292 378 C232 382 226 412 292 416 C338 420 352 440 392 448"/></defs>
+      <path class="body" d="M85 70 Q280 22 475 70 Q525 215 492 395 Q460 548 280 568 Q100 548 68 395 Q35 215 85 70Z"/>
+      <path class="liver" d="M300 120 C360 95 450 110 455 150 C440 190 360 200 300 185 C285 160 285 135 300 120Z"/>
+      <path class="gb" d="M352 190 C340 195 338 215 350 226 C362 235 372 220 368 204 C366 194 360 189 352 190Z"/>
+      <path class="colon draw d2" pathLength="1" d="M392 452 V172 C330 214 205 214 130 172 V372 C130 428 178 436 205 462 C232 486 258 474 266 512"/>
+      <path class="colon in2 draw d2" pathLength="1" d="M392 452 V172 C330 214 205 214 130 172 V372 C130 428 178 436 205 462 C232 486 258 474 266 512"/>
+      <path class="sb draw d3" pathLength="1" d="M300 250 C345 250 345 282 300 287 C238 295 228 322 292 330 C352 338 347 374 292 378 C232 382 226 412 292 416 C338 420 352 440 392 448"/>
+      <path class="sb in2 draw d3" pathLength="1" d="M300 250 C345 250 345 282 300 287 C238 295 228 322 292 330 C352 338 347 374 292 378 C232 382 226 412 292 416 C338 420 352 440 392 448"/>
+      <path d="M352 226 Q330 240 300 250" fill="none" stroke="#B3261E" stroke-width="3" stroke-dasharray="4 4"/>
+      <circle class="stone" r="7" id="stone" cx="300" cy="250">
+        <animateMotion id="stoneAnim" dur="10s" begin="3.6s" repeatCount="indefinite" keyPoints="0;1;1" keyTimes="0;.72;1" calcMode="linear"><mpath href="#sbp"/></animateMotion>
+      </circle>
+      <path class="tum" d="M118 292 q-18 10 -4 24 q10 8 16 -2 q-4 -14 -12 -22z"/>
+      <a class="hs" href="#brides" data-k="brides" style="--ac:#3E4FA3;animation-delay:2.7s" aria-label="Occlusion sur brides">
+        <line class="ln" x1="292" y1="332" x2="520" y2="332"/><circle class="ring" cx="292" cy="332" r="12"/><circle class="dot" cx="292" cy="332" r="7"/><text x="528" y="337">Brides</text>
+      </a>
+      <a class="hs" href="#hernie" data-k="hernie" style="--ac:#0F7C86;animation-delay:2.9s" aria-label="Hernie étranglée">
+        <path d="M426 508 q14 -18 28 -4 q8 16 -8 22 q-18 4 -20 -18z" fill="#F4C9C9" stroke="#18233A" stroke-width="2"/>
+        <line class="ln" x1="450" y1="516" x2="520" y2="516"/><circle class="ring" cx="438" cy="514" r="11"/><circle class="dot" cx="438" cy="514" r="7"/><text x="528" y="521">Hernie étranglée</text>
+      </a>
+      <a class="hs" href="#volvulus" data-k="volvulus" style="--ac:#7B3F9A;animation-delay:3.1s" aria-label="Volvulus du sigmoïde">
+        <line class="ln" x1="210" y1="466" x2="-10" y2="466"/><circle class="ring" cx="210" cy="466" r="12"/><circle class="dot" cx="210" cy="466" r="7"/><text x="-18" y="471" text-anchor="end">Volvulus du sigmoïde</text>
+      </a>
+      <a class="hs" href="#neoplasie" data-k="neoplasie" style="--ac:#3C4659;animation-delay:3.3s" aria-label="Occlusion néoplasique">
+        <line class="ln" x1="124" y1="304" x2="-10" y2="304"/><circle class="ring" cx="124" cy="304" r="12"/><circle class="dot" cx="124" cy="304" r="7"/><text x="-18" y="309" text-anchor="end">Occlusion néoplasique</text>
+      </a>
+      <a class="hs" href="#biliaire" data-k="biliaire" style="--ac:#8A7A12;animation-delay:3.5s" aria-label="Iléus biliaire">
+        <line class="ln" x1="368" y1="212" x2="520" y2="212"/><circle class="ring" cx="359" cy="210" r="12"/><circle class="dot" cx="359" cy="210" r="7"/><text x="528" y="217">Iléus biliaire</text>
+      </a>
+    </svg>
+    <p class="hint">Touche un point pour aller directement à la cause.</p>
+    <div class="mapkeys" id="mapKeys">
+      <a href="#brides" data-k="brides">Brides</a><a href="#hernie" data-k="hernie">Hernie étranglée</a><a href="#volvulus" data-k="volvulus">Volvulus du sigmoïde</a><a href="#neoplasie" data-k="neoplasie">Néoplasique</a><a href="#biliaire" data-k="biliaire">Iléus biliaire</a>
+    </div>
+  </div>
+</header>
+
+<!-- ================= Terrain ================= -->
+<section class="sec" id="terrain" data-title="Quel terrain, quelle cause ?">
+<div class="wrap">
+  <h2 class="kt" data-kt>Quel terrain, quelle cause ?</h2>
+  <p class="lead">En garde, la cause se devine d’abord au terrain. Pour chaque patient, choisis l’étiologie la plus probable, puis lis la justification.</p>
+  <div class="bloc"><div class="bh"><h4>Ce que le cours cite comme étiologies</h4><span class="bd c">Cours</span></div>
+    <p><b>Occlusions néoplasiques :</b> cancer colorectal, tumeur grêlique.</p>
+    <p><b>Occlusions non néoplasiques :</b> volvulus du sigmoïde, étranglement herniaire, occlusion postopératoire.</p>
+    <p>Le cours mentionne aussi, dans les mécanismes, la bride postopératoire, la carcinose et le calcul d’origine biliaire (échographie utile dans l’iléus biliaire).</p></div>
+  <div class="vg" id="vg"></div>
+  <p class="score" id="vgScore" aria-live="polite"></p>
+</div>
+</section>
+
+<!-- ================= Brides ================= -->
+<section class="sec etio" id="brides" data-title="Occlusion sur brides" style="--ac:#3E4FA3">
+<div class="wide">
+  <p class="chap">Le grêle, des années après une opération</p>
+  <h2 class="kt" data-kt>Occlusion sur brides et postopératoire</h2>
+  <p class="tag">Un souvenir de chirurgie, parfois vieux de plusieurs années, qui se rappelle un soir par une occlusion du grêle.</p>
+  <div class="egrid">
+    <div class="efig">
+      <div class="stage" id="figA">
+        <svg viewBox="0 0 640 320" role="img" aria-label="Schéma : une bride tire sur une anse grêle, l’angule, et l’intestin se dilate en amont">
+          <rect x="30" y="16" width="580" height="32" rx="9" fill="#E8DCC9" stroke="#18233A" stroke-width="2.5"/>
+          <path d="M300 16 l8 8 -8 8 8 8 -8 8" fill="none" stroke="#B3261E" stroke-width="2.5" stroke-linecap="round"/>
+          <text x="44" y="38" style="font:600 13px var(--sans);fill:#5A4A33">paroi, cicatrice</text>
+          <line id="faBand" x1="320" y1="48" x2="320" y2="48" stroke="#B3261E" stroke-width="6" stroke-linecap="round"/>
+          <path id="faO1" fill="none" stroke="#18233A" stroke-linecap="round"/><path id="faF1" fill="none" stroke="#F3C1BD" stroke-linecap="round"/>
+          <path id="faO2" fill="none" stroke="#18233A" stroke-linecap="round"/><path id="faF2" fill="none" stroke="#F3C1BD" stroke-linecap="round"/>
+          <g id="faGas" opacity="0" fill="#F4B73F" stroke="#C98A12" stroke-width="1.5"><circle cx="70" cy="226" r="8"/><circle cx="118" cy="218" r="11"/><circle cx="170" cy="228" r="8"/><circle cx="214" cy="218" r="10"/><circle cx="256" cy="228" r="7"/></g>
+          <g id="faL1" opacity="0"><text x="40" y="150" style="font:700 15px var(--sans);fill:#3E4FA3">amont dilaté</text></g>
+          <g id="faL2" opacity="0"><text x="560" y="206" text-anchor="end" style="font:700 15px var(--sans);fill:#596277">aval collabé</text></g>
+          <g id="faL3" opacity="0"><text x="336" y="82" style="font:700 15px var(--sans);fill:#B3261E">bride</text></g>
+        </svg>
+        <div class="ctr" data-fig="A"><button class="play">Lecture</button><button data-s="1" aria-pressed="true">La bride</button><button data-s="2" aria-pressed="false">L’angulation</button><button data-s="3" aria-pressed="false">La distension</button></div>
+        <div class="cap" aria-live="polite"></div>
+      </div>
+    </div>
+    <div class="ec">
+      <div class="bloc"><div class="bh"><h4>Ce que dit le cours</h4><span class="bd c">Cours</span></div>
+        <ul>
+          <li>La bride fait partie des compressions exoluminales, donc des obstructions.</li>
+          <li>Une bride postopératoire ou un défaut de péritonisation peut créer une brèche où l’anse s’étrangle : c’est une strangulation.</li>
+          <li>L’occlusion postopératoire figure parmi les étiologies non néoplasiques.</li>
+          <li>L’iléus réflexe postopératoire est une occlusion fonctionnelle.</li>
+          <li>À l’inspection, on cherche une cicatrice abdominale.</li>
+        </ul></div>
+      <div class="note"><b class="t">Point d’attention</b>L’expression « occlusion postopératoire » recouvre deux choses différentes : l’<b>iléus postopératoire</b> (fonctionnel, attendu dans les jours qui suivent l’intervention) et l’<b>occlusion mécanique</b> (bride, hernie interne), précoce ou tardive. Le traitement n’est pas le même.</div>
+      <div class="fgroup"><h3>Fiche complète</h3><span class="bd x">Complément</span></div>
+      <div class="g"><h4>Définition</h4><div><p>Occlusion du grêle due à une bride ou à une adhérence fibreuse, le plus souvent après une chirurgie abdominale ou pelvienne. La bride comprime ou angule l’anse (obstruction), ou forme un anneau qui l’étrangle (strangulation).</p></div></div>
+      <div class="g"><h4>Épidémiologie et terrain</h4><div><p>Antécédent de laparotomie ou de chirurgie pelvienne : appendicectomie, chirurgie gynécologique, colectomie. Le risque persiste des années après l’intervention. Les brides comptent parmi les premières causes d’occlusion du grêle de l’adulte <span class="av">[À VÉRIFIER pour les chiffres de ton contexte]</span>. Plus rarement : brides congénitales ou inflammatoires, sans chirurgie.</p></div></div>
+      <div class="g"><h4>Physiopathologie</h4><div><p>Après une agression du péritoine (chirurgie, infection, radiothérapie), des adhérences fibreuses se forment. Selon leur disposition, elles angulent ou compriment l’anse (obstruction), ou forment un anneau ou une brèche qui piège une anse (anse fermée, strangulation). En amont, on retrouve la distension et le cercle vicieux du module 1.</p></div></div>
+      <div class="g"><h4>Clinique</h4><div><p>Douleur crampiforme, vomissements, arrêt des matières et des gaz, météorisme central, cicatrice abdominale. Début progressif dans l’obstruction, brutal dans la strangulation.</p>
+        <div class="bloc urg" style="margin:.6rem 0"><div class="bh"><h4>Signes de gravité</h4></div><p>Douleur devenue permanente, fièvre, tachycardie, défense abdominale.</p></div></div></div>
+      <div class="g"><h4>Examens</h4><div><p><b>TDM</b> abdomino-pelvienne injectée en première intention quand elle est disponible : grêle d’amont dilaté, zone de transition, grêle d’aval collabé, signe des fèces dans le grêle, et signes d’ischémie (rehaussement pariétal anormal, œdème du mésentère, liquide libre). <b>ASP</b> : NHA centraux, plus larges que hauts. <b>Biologie</b> : ionogramme, lactate, NFS, CRP.</p></div></div>
+      <div class="g"><h4>Diagnostic différentiel</h4><div><ul><li>Iléus postopératoire prolongé.</li><li>Récidive tumorale ou carcinose chez un patient opéré d’un cancer.</li><li>Hernie étranglée, hernie interne.</li><li>Maladie de Crohn sténosante.</li></ul></div></div>
+      <div class="g"><h4>Traitement</h4><div>
+        <div class="bloc ttt" style="margin:.2rem 0"><div class="bh"><h4>Selon la gravité</h4></div>
+          <p><b>Réanimation et décompression</b> comme au module 1.</p>
+          <p><b>Traitement conservateur surveillé</b> si l’occlusion est incomplète et sans signe de gravité : jeûne, sonde nasogastrique, réhydratation, réévaluation clinique rapprochée. Un test aux produits de contraste hydrosolubles peut guider la décision <span class="av">[À VÉRIFIER]</span>.</p>
+          <p><b>Chirurgie sans délai</b> si strangulation, péritonite ou instabilité, ou en cas d’échec du traitement conservateur, souvent évalué autour de 48 heures <span class="av">[À VÉRIFIER]</span>. Geste : section de la bride (par cœlioscopie ou laparotomie selon le contexte), contrôle de la viabilité de l’anse, résection si nécrose.</p></div></div></div>
+      <div class="g"><h4>Complications et pronostic</h4><div><p>Nécrose, perforation, péritonite, sepsis. Lésion de l’intestin pendant la section des brides. Récidive, car de nouvelles adhérences se forment. Syndrome du grêle court après une résection étendue.</p></div></div>
+      <div class="g"><h4>Pièges</h4><div>
+        <div class="bloc pie" style="margin:.2rem 0"><div class="bh"><h4>Ce qui fait perdre des points</h4></div>
+          <ul>
+            <li>L’absence de cicatrice n’élimine pas une bride.</li>
+            <li>Chez un patient opéré d’un cancer, penser à la récidive ou à la carcinose avant la bride : le scanner tranche.</li>
+            <li>Ne pas mettre sur le compte de l’iléus postopératoire un tableau qui s’aggrave ou se prolonge : chercher une complication.</li>
+            <li>Un traitement conservateur sans réévaluation régulière fait manquer la strangulation.</li>
+          </ul></div></div></div>
+      <div class="test"><div class="q">Teste-toi. Chez un patient déjà opéré, quels signes doivent faire abandonner le traitement conservateur ?</div>
+        <button class="rv" data-reveal="a-bri" aria-expanded="false">Voir la réponse</button>
+        <div class="ans" id="a-bri" hidden><p>Douleur devenue permanente, fièvre, tachycardie, défense ou contracture, lactate élevé, signes d’ischémie au scanner, aggravation clinique malgré la décompression.</p></div></div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ================= Hernie ================= -->
+<section class="sec etio" id="hernie" data-title="Hernie étranglée" style="--ac:#0F7C86">
+<div class="wide">
+  <p class="chap">La paroi abdominale, une urgence qui se palpe</p>
+  <h2 class="kt" data-kt>Hernie étranglée</h2>
+  <p class="tag">L’occlusion que l’on diagnostique avec les mains, à condition de les poser au bon endroit.</p>
+  <div class="egrid">
+    <div class="efig">
+      <div class="stage" id="figB">
+        <svg viewBox="0 0 640 320" role="img" aria-label="Schéma : une anse passe par un orifice de la paroi, le collet se resserre, l’anse devient ischémique">
+          <rect id="fbWL" y="140" height="34" rx="8" fill="#E8DCC9" stroke="#18233A" stroke-width="2.5"/>
+          <rect id="fbWR" y="140" height="34" rx="8" fill="#E8DCC9" stroke="#18233A" stroke-width="2.5"/>
+          <rect id="fbSac" fill="none" stroke="#B7BDCB" stroke-width="2" stroke-dasharray="6 5" rx="26"/>
+          <path id="fbO" fill="none" stroke="#18233A" stroke-linecap="round" stroke-linejoin="round"/>
+          <path id="fbF" fill="none" stroke="#F3C1BD" stroke-linecap="round" stroke-linejoin="round"/>
+          <ellipse id="fbRing" cx="350" cy="157" rx="30" ry="10" fill="none" stroke="#B3261E" stroke-width="4" opacity="0"/>
+          <text x="46" y="132" style="font:600 13px var(--sans);fill:#5A4A33">paroi abdominale</text>
+          <text id="fbT1" x="350" y="198" text-anchor="middle" opacity="0" style="font:700 14px var(--sans);fill:#B3261E">collet</text>
+          <text id="fbT2" x="420" y="60" opacity="0" style="font:700 14px var(--sans);fill:#0F7C86">sac herniaire</text>
+          <text id="fbT3" x="150" y="262" opacity="0" style="font:700 14px var(--sans);fill:#596277">abdomen</text>
+        </svg>
+        <div class="ctr" data-fig="B"><button class="play">Lecture</button><button data-s="1" aria-pressed="true">La hernie</button><button data-s="2" aria-pressed="false">Le collet se serre</button><button data-s="3" aria-pressed="false">L’œdème</button><button data-s="4" aria-pressed="false">L’ischémie</button></div>
+        <div class="cap" aria-live="polite"></div>
+      </div>
+    </div>
+    <div class="ec">
+      <div class="bloc"><div class="bh"><h4>Ce que dit le cours</h4><span class="bd c">Cours</span></div>
+        <ul>
+          <li>L’étranglement herniaire est cité parmi les étiologies non néoplasiques.</li>
+          <li>Étranglement : incarcération dans une hernie ou dans une brèche, avec vascularisation de l’anse entravée.</li>
+          <li>L’examen des orifices herniaires est systématique, et on recherche une masse irréductible à l’inspection.</li>
+        </ul></div>
+      <div class="fgroup"><h3>Fiche complète</h3><span class="bd x">Complément</span></div>
+      <div class="g"><h4>Définition</h4><div><p>Passage d’un viscère (anse grêle, épiploon, parfois côlon) à travers un orifice de la paroi abdominale. La hernie est <b>incarcérée</b> quand elle ne peut plus être réintégrée, et <b>étranglée</b> quand le collet comprime les vaisseaux de l’anse et menace sa vitalité.</p></div></div>
+      <div class="g"><h4>Épidémiologie et terrain</h4><div><p>Hernie inguinale : la plus fréquente, surtout chez l’homme. Hernie crurale : femme âgée, petite et à fort risque d’étranglement <span class="av">[À VÉRIFIER pour la fréquence relative]</span>. Hernies ombilicales et éventrations sur cicatrice. Facteurs favorisants : efforts, toux chronique, constipation, obésité, chirurgie antérieure.</p></div></div>
+      <div class="g"><h4>Physiopathologie</h4><div><p>Le collet étroit comprime d’abord le retour veineux : l’anse s’œdématie, ce qui serre davantage le collet, puis les artères sont atteintes : ischémie, nécrose, perforation, péritonite.</p>
+        <p><b>Hernie de Richter :</b> seule une partie de la paroi de l’anse est pincée. Il peut y avoir ischémie sans occlusion complète.</p></div></div>
+      <div class="g"><h4>Clinique</h4><div><p>Tuméfaction douloureuse, tendue, irréductible, sans impulsion à la toux, parfois inflammatoire. Douleur vive, vomissements, signes d’occlusion. Chez l’obèse ou dans la hernie crurale, la tuméfaction est discrète.</p></div></div>
+      <div class="g"><h4>Examens</h4><div><p>Le diagnostic est clinique. TDM ou échographie en cas de doute (obésité, hernie profonde). Lactate, NFS, CRP, bilan préopératoire. <b>Ne pas retarder l’intervention</b> pour attendre une imagerie.</p></div></div>
+      <div class="g"><h4>Diagnostic différentiel</h4><div><ul><li>Adénopathie inguinale, abcès, hématome, lipome.</li><li>Hydrocèle ou torsion du cordon chez l’homme.</li><li>Anévrysme fémoral, hernie de Spiegel.</li></ul></div></div>
+      <div class="g"><h4>Traitement</h4><div>
+        <div class="bloc ttt" style="margin:.2rem 0"><div class="bh"><h4>Urgence chirurgicale</h4></div>
+          <p><b>Réanimation brève</b>, puis intervention. Le <b>taxis</b> (réduction manuelle) n’est discuté que pour une hernie récente, sans signe d’ischémie, et pratiqué avec douceur <span class="av">[À VÉRIFIER selon les protocoles]</span> ; jamais en cas de suspicion de souffrance de l’anse.</p>
+          <p><b>Au bloc :</b> ouverture du sac, contrôle de la viabilité de l’anse (couleur, péristaltisme, pulsations), réintégration si elle est viable, résection si nécrose, puis traitement de la paroi. Le recours à une prothèse dépend du degré de contamination <span class="av">[À VÉRIFIER]</span>.</p></div></div></div>
+      <div class="g"><h4>Complications et pronostic</h4><div><p>Nécrose, perforation, péritonite, résection intestinale, infection de paroi, récidive. Le terrain âgé alourdit le pronostic.</p></div></div>
+      <div class="g"><h4>Pièges</h4><div>
+        <div class="bloc pie" style="margin:.2rem 0"><div class="bh"><h4>Ce qui fait perdre des points</h4></div>
+          <ul>
+            <li>La hernie crurale est petite et se manque facilement.</li>
+            <li>Hernie de Richter : pas d’occlusion franche, mais une ischémie possible.</li>
+            <li>Une hernie « réduite » (spontanément ou au taxis) peut avoir réintégré une anse ischémique : la douleur persiste.</li>
+            <li>Examiner tous les orifices, y compris les cicatrices (éventration).</li>
+          </ul></div></div></div>
+      <div class="test"><div class="q">Teste-toi. Pourquoi l’examen des orifices herniaires est-il systématique devant une occlusion ?</div>
+        <button class="rv" data-reveal="a-her" aria-expanded="false">Voir la réponse</button>
+        <div class="ans" id="a-her" hidden><p>Parce qu’une hernie étranglée est une strangulation, donc une urgence chirurgicale qui se diagnostique à l’examen. La manquer retarde l’opération et expose à la nécrose de l’anse.</p></div></div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ================= Volvulus ================= -->
+<section class="sec etio" id="volvulus" data-title="Volvulus du sigmoïde" style="--ac:#7B3F9A">
+<div class="wide">
+  <p class="chap">Le côlon, anse fermée du sujet âgé</p>
+  <h2 class="kt" data-kt>Volvulus du sigmoïde</h2>
+  <p class="tag">Un sigmoïde trop long, un méso trop étroit, et une torsion qui transforme le côlon en ballon.</p>
+  <div class="egrid">
+    <div class="efig">
+      <div class="stage" id="figC">
+        <svg viewBox="0 0 640 320" role="img" aria-label="Schéma : torsion progressive de l’anse sigmoïdienne autour de son méso">
+          <polygon id="fcFan" fill="rgba(179,38,30,.14)" stroke="rgba(179,38,30,.45)" stroke-width="1.5"/>
+          <path id="fcAo" fill="none" stroke="#18233A" stroke-linecap="round"/><path id="fcAf" fill="none" stroke="#F3C1BD" stroke-linecap="round"/>
+          <path id="fcBo" fill="none" stroke="#18233A" stroke-linecap="round"/><path id="fcBf" fill="none" stroke="#F3C1BD" stroke-linecap="round"/>
+          <path id="fcLo" fill="none" stroke="#18233A" stroke-linecap="round"/><path id="fcLf" fill="none" stroke="#F3C1BD" stroke-linecap="round"/>
+          <g id="fcGas" opacity="0" fill="#F4B73F" stroke="#C98A12" stroke-width="1.5"><circle cx="300" cy="104" r="10"/><circle cx="340" cy="96" r="12"/><circle cx="320" cy="130" r="8"/><circle cx="286" cy="140" r="7"/><circle cx="354" cy="136" r="7"/></g>
+          <text x="320" y="296" text-anchor="middle" style="font:700 14px var(--sans);fill:#596277">pied du méso</text>
+          <text id="fcTv" x="320" y="26" text-anchor="middle" style="font:700 15px var(--sans);fill:#7B3F9A"></text>
+        </svg>
+        <div class="ctr" data-fig="C"><button class="play">Lecture</button><label for="sC">Torsion</label><input id="sC" type="range" min="0" max="540" step="5" value="0" aria-label="Degré de torsion du sigmoïde"></div>
+        <div class="cap" aria-live="polite"></div>
+        <p style="font-size:.82rem;color:var(--muted);margin:.3rem .2rem 0">Les angles affichés sont indicatifs : ils servent à visualiser, pas à mémoriser.</p>
+      </div>
+    </div>
+    <div class="ec">
+      <div class="bloc"><div class="bh"><h4>Ce que dit le cours</h4><span class="bd c">Cours</span></div>
+        <ul>
+          <li>Le volvulus du sigmoïde est cité parmi les étiologies non néoplasiques.</li>
+          <li>Volvulus : torsion. C’est une strangulation, car la vascularisation de l’anse est entravée.</li>
+          <li>Occlusion colique : arrêt des matières et des gaz absolu et précoce, vomissements tardifs, météorisme important, ampoule rectale vide.</li>
+        </ul></div>
+      <div class="fgroup"><h3>Fiche complète</h3><span class="bd x">Complément</span></div>
+      <div class="g"><h4>Définition</h4><div><p>Torsion de l’anse sigmoïdienne autour de l’axe de son méso. Elle crée une occlusion colique en <b>anse fermée</b> (les deux extrémités de l’anse sont bloquées) et peut entraîner une strangulation par torsion du pédicule vasculaire.</p></div></div>
+      <div class="g"><h4>Épidémiologie et terrain</h4><div><p>Sujet âgé, constipé chronique, souvent institutionnalisé ou porteur d’un trouble neurologique ou psychiatrique. Sigmoïde long (dolichosigmoïde) avec un méso étroit à pied rapproché. Prédominance masculine <span class="av">[À VÉRIFIER]</span>. Fréquence très variable selon les régions du monde <span class="av">[À VÉRIFIER pour ton contexte]</span>.</p></div></div>
+      <div class="g"><h4>Physiopathologie</h4><div><p>Le long sigmoïde pivote sur son méso. La torsion (le plus souvent d’au moins un demi-tour <span class="av">[À VÉRIFIER]</span>) bloque l’anse à ses deux extrémités : les gaz s’y accumulent et l’anse se dilate énormément. En serrant, la torsion comprime le pédicule vasculaire : ischémie, nécrose, perforation.</p></div></div>
+      <div class="g"><h4>Clinique</h4><div><p>Début brutal ou progressif, douleur abdominale, <b>ballonnement massif, asymétrique et tympanique</b>, arrêt absolu des matières et des gaz, vomissements tardifs, ampoule rectale vide. Des épisodes antérieurs résolus spontanément sont possibles.</p>
+        <div class="bloc urg" style="margin:.6rem 0"><div class="bh"><h4>Signes de gravité</h4></div><p>Fièvre, défense abdominale, tachycardie, choc : pense nécrose.</p></div></div></div>
+      <div class="g"><h4>Examens</h4><div><p><b>ASP</b> : anse sigmoïdienne très dilatée en U inversé (« grain de café »), dont les deux branches convergent vers le pelvis, avec peu de NHA. <b>TDM</b> : confirme, montre la torsion du mésocôlon (signe du tourbillon) et cherche l’ischémie. <b>Lavement aux hydrosolubles</b> : aspect effilé « en bec d’oiseau » au niveau de la torsion ; à éviter si une perforation est suspectée.</p></div></div>
+      <div class="g"><h4>Diagnostic différentiel</h4><div><ul><li>Volvulus du cæcum.</li><li>Occlusion colique tumorale.</li><li>Pseudo-obstruction colique aiguë (syndrome d’Ogilvie).</li><li>Iléus.</li></ul></div></div>
+      <div class="g"><h4>Traitement</h4><div>
+        <div class="bloc ttt" style="margin:.2rem 0"><div class="bh"><h4>Deux situations</h4></div>
+          <p><b>Sans signe de gravité :</b> détorsion endoscopique (rectosigmoïdoscopie, avec parfois une sonde rectale laissée en place). Elle permet aussi de juger la viabilité de la muqueuse. Puis <b>sigmoïdectomie programmée</b> pour prévenir la récidive, très fréquente sans chirurgie <span class="av">[À VÉRIFIER pour le taux]</span>.</p>
+          <p><b>Avec signes de gravité</b> (nécrose, perforation, péritonite) <b>ou échec de la détorsion :</b> chirurgie en urgence, résection du sigmoïde, avec stomie de type Hartmann dans les situations à risque.</p></div></div></div>
+      <div class="g"><h4>Complications et pronostic</h4><div><p>Nécrose, perforation, péritonite stercorale, choc septique. Récidive. Mortalité élevée en cas de nécrose et sur terrain fragile.</p></div></div>
+      <div class="g"><h4>Pièges</h4><div>
+        <div class="bloc pie" style="margin:.2rem 0"><div class="bh"><h4>Ce qui fait perdre des points</h4></div>
+          <ul>
+            <li>Une détorsion réussie sans projet chirurgical expose à la récidive.</li>
+            <li>Muqueuse violacée ou noire à l’endoscopie : chirurgie urgente.</li>
+            <li>Ne pas le confondre avec un iléus : ballonnement massif et asymétrique, arrêt absolu des gaz.</li>
+            <li>Pas de lavement si perforation suspectée.</li>
+          </ul></div></div></div>
+      <div class="test"><div class="q">Teste-toi. Une détorsion endoscopique réussie suffit-elle ? Pourquoi ?</div>
+        <button class="rv" data-reveal="a-vol" aria-expanded="false">Voir la réponse</button>
+        <div class="ans" id="a-vol" hidden><p>Non. Le long sigmoïde et son méso étroit restent en place : la récidive est fréquente. On programme une sigmoïdectomie après la détorsion, sauf contre-indication liée au terrain.</p></div></div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ================= Néoplasique ================= -->
+<section class="sec etio" id="neoplasie" data-title="Occlusion néoplasique" style="--ac:#3C4659">
+<div class="wide">
+  <p class="chap">Le côlon, et plus rarement le grêle</p>
+  <h2 class="kt" data-kt>Occlusion néoplasique</h2>
+  <p class="tag">Quand l’occlusion est le premier symptôme d’un cancer, et que le vrai danger est le cæcum.</p>
+  <div class="egrid">
+    <div class="efig">
+      <div class="stage" id="figD">
+        <svg viewBox="0 0 640 320" role="img" aria-label="Schéma : une tumeur rétrécit la lumière du côlon, les selles s’accumulent en amont et le cæcum se distend">
+          <rect x="160" y="110" width="450" height="100" rx="50" fill="#FBF3EE" stroke="#18233A" stroke-width="3"/>
+          <g id="fdStool" fill="#8B6B4A" opacity="0"></g>
+          <ellipse id="fdTop" cx="400" cy="124" rx="62" ry="0" fill="#B3261E"/>
+          <ellipse id="fdBot" cx="400" cy="196" rx="62" ry="0" fill="#B3261E"/>
+          <circle id="fdCae" cx="110" cy="160" r="34" fill="#F3C1BD" stroke="#18233A" stroke-width="3"/>
+          <path d="M20 160 H62" stroke="#18233A" stroke-width="12" stroke-linecap="round"/><path d="M20 160 H62" stroke="#F3C1BD" stroke-width="6" stroke-linecap="round"/>
+          <text x="20" y="196" style="font:600 12px var(--sans);fill:#596277">valvule iléocæcale</text>
+          <text id="fdTc" x="110" y="262" text-anchor="middle" style="font:700 14px var(--sans);fill:#3C4659">cæcum</text>
+          <text id="fdTt" x="400" y="86" text-anchor="middle" opacity="0" style="font:700 14px var(--sans);fill:#B3261E">tumeur</text>
+          <text id="fdTa" x="540" y="250" text-anchor="middle" style="font:600 13px var(--sans);fill:#596277">aval : vide</text>
+        </svg>
+        <div class="ctr" data-fig="D"><button class="play">Lecture</button><label for="sD">Croissance de la tumeur</label><input id="sD" type="range" min="0" max="100" step="1" value="0" aria-label="Croissance de la tumeur"></div>
+        <div class="cap" aria-live="polite"></div>
+      </div>
+    </div>
+    <div class="ec">
+      <div class="bloc"><div class="bh"><h4>Ce que dit le cours</h4><span class="bd c">Cours</span></div>
+        <ul>
+          <li>Occlusions néoplasiques : cancer colorectal, tumeur grêlique.</li>
+          <li>Obstruction pariétale : épaississement de la paroi par une tumeur. Obstruction exoluminale : compression par une carcinose.</li>
+          <li>Occlusion colique : douleur peu marquée, vomissements tardifs, arrêt des matières et des gaz absolu et précoce, météorisme en cadre, NHA périphériques et volumineux, gaz dans le côlon.</li>
+          <li>Ampoule rectale vide, surtout dans l’occlusion colique.</li>
+        </ul></div>
+      <div class="fgroup"><h3>Fiche complète</h3><span class="bd x">Complément</span></div>
+      <div class="g"><h4>Définition</h4><div><p>Occlusion due au rétrécissement de la lumière par une tumeur (obstruction pariétale) ou à la compression par une carcinose péritonéale (obstruction exoluminale). Le cancer colorectal est la cause principale ; la tumeur du grêle est plus rare.</p></div></div>
+      <div class="g"><h4>Épidémiologie et terrain</h4><div><p>Après 50 ans, le cancer colorectal est la cause la plus fréquente d’occlusion colique. Les tumeurs du côlon gauche se compliquent plus souvent d’occlusion : la lumière y est plus étroite et les selles plus solides. Tumeurs du grêle : rares (adénocarcinome, lymphome, tumeur stromale, tumeur neuroendocrine), souvent révélées tardivement. L’occlusion est parfois le mode de révélation du cancer.</p></div></div>
+      <div class="g"><h4>Physiopathologie</h4><div><p>Sténose progressive, d’abord subocclusive, puis occlusion complète quand un bouchon de selles ou l’œdème achève de fermer la lumière. Si la valvule iléocæcale reste continente, le côlon d’amont devient une anse fermée : le <b>cæcum</b>, segment le plus large, est le plus exposé à la perforation (loi de Laplace, module 1).</p></div></div>
+      <div class="g"><h4>Clinique</h4><div><p>Troubles du transit récents (constipation, alternance diarrhée-constipation), rectorragies, amaigrissement, anémie, puis ballonnement et arrêt absolu des gaz. Douleur peu marquée, vomissements tardifs, météorisme en cadre. Au toucher rectal : tumeur basse, ampoule vide, sang.</p></div></div>
+      <div class="g"><h4>Examens</h4><div><p><b>ASP</b> : NHA périphériques, volumineux, gaz dans le côlon. <b>TDM thoraco-abdomino-pelvienne</b> injectée : siège de la tumeur, distension du cæcum, signes de perforation, extension et métastases. Lavement aux hydrosolubles si besoin. <b>Coloscopie avec biopsies</b> différée, après levée de l’occlusion. Biologie : NFS (anémie), ionogramme.</p></div></div>
+      <div class="g"><h4>Diagnostic différentiel</h4><div><ul><li>Volvulus du sigmoïde.</li><li>Sténose diverticulaire, maladie de Crohn.</li><li>Fécalome, pseudo-obstruction colique.</li><li>Compression extrinsèque (carcinose).</li></ul></div></div>
+      <div class="g"><h4>Traitement</h4><div>
+        <div class="bloc ttt" style="margin:.2rem 0"><div class="bh"><h4>Décision en équipe</h4></div>
+          <p><b>Réanimation</b> puis décision. Un cæcum très dilaté impose l’urgence.</p>
+          <p><b>Options :</b> chirurgie en urgence (résection de la tumeur avec ou sans anastomose, ou stomie de dérivation selon l’état local et général) ; prothèse (stent) colique comme pont vers la chirurgie ou en palliatif, selon les équipes <span class="av">[À VÉRIFIER : indications]</span>.</p>
+          <p>La prise en charge oncologique suit : bilan d’extension, discussion multidisciplinaire.</p></div></div></div>
+      <div class="g"><h4>Complications et pronostic</h4><div><p>Perforation (diastatique du cæcum ou tumorale), péritonite stercorale, choc septique. Morbidité élevée de la chirurgie en urgence, stomie, extension de la maladie.</p></div></div>
+      <div class="g"><h4>Pièges</h4><div>
+        <div class="bloc pie" style="margin:.2rem 0"><div class="bh"><h4>Ce qui fait perdre des points</h4></div>
+          <ul>
+            <li>Pas de laxatifs ni de lavements évacuateurs devant une occlusion colique.</li>
+            <li>Pas de coloscopie complète en urgence.</li>
+            <li>Occlusion basse après 50 ans : cancer jusqu’à preuve du contraire.</li>
+            <li>Suivre la distension du cæcum : c’est elle qui précipite l’urgence.</li>
+          </ul></div></div></div>
+      <div class="test"><div class="q">Teste-toi. Pourquoi le cæcum se perfore-t-il le premier dans une occlusion colique ?</div>
+        <button class="rv" data-reveal="a-neo" aria-expanded="false">Voir la réponse</button>
+        <div class="ans" id="a-neo" hidden><p>Si la valvule iléocæcale est continente, le côlon d’amont est une anse fermée. Pour une même pression, la tension de la paroi augmente avec le rayon (loi de Laplace) : le cæcum, le segment le plus large, cède en premier.</p></div></div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ================= Iléus biliaire ================= -->
+<section class="sec etio" id="biliaire" data-title="Iléus biliaire" style="--ac:#8A7A12">
+<div class="wide">
+  <p class="chap">De la vésicule à l’iléon terminal</p>
+  <h2 class="kt" data-kt>Iléus biliaire</h2>
+  <p class="tag">Un nom trompeur : ce n’est pas un iléus, c’est une obstruction mécanique par un calcul qui a voyagé.</p>
+  <div class="egrid">
+    <div class="efig">
+      <div class="stage" id="figE">
+        <svg viewBox="0 0 640 320" role="img" aria-label="Schéma : un calcul biliaire passe par une fistule dans le duodénum, migre dans le grêle et s’enclave dans l’iléon terminal">
+          <ellipse cx="130" cy="62" rx="28" ry="40" fill="#CBD38A" stroke="#8A7A12" stroke-width="3"/>
+          <text x="172" y="40" style="font:700 14px var(--sans);fill:#8A7A12">vésicule</text>
+          <g id="feAir" opacity="0" fill="#fff" stroke="#8A7A12" stroke-width="1.5"><circle cx="120" cy="48" r="5"/><circle cx="138" cy="60" r="4"/><circle cx="124" cy="78" r="3.5"/></g>
+          <path id="feFist" d="M126 100 Q120 125 120 148" fill="none" stroke="#B3261E" stroke-width="5" stroke-dasharray="5 4" stroke-linecap="round" opacity="0"/>
+          <path id="feBo" d="M118 150 H300 C362 150 362 205 300 205 H215 C152 205 152 262 215 262 H520" fill="none" stroke="#18233A" stroke-width="32" stroke-linecap="round" stroke-linejoin="round"/>
+          <path id="feBf" d="M118 150 H300 C362 150 362 205 300 205 H215 C152 205 152 262 215 262 H520" fill="none" stroke="#F3C1BD" stroke-width="25" stroke-linecap="round" stroke-linejoin="round"/>
+          <rect x="534" y="236" width="76" height="52" rx="16" fill="#F8E4E0" stroke="#18233A" stroke-width="3"/>
+          <text x="572" y="267" text-anchor="middle" style="font:700 13px var(--sans);fill:#18233A">cæcum</text>
+          <text x="118" y="136" style="font:600 12px var(--sans);fill:#596277">duodénum</text>
+          <circle id="feStone" r="10" fill="#C9A21E" stroke="#7A6410" stroke-width="2.5" cx="130" cy="64"/>
+          <g id="feChips" opacity="0" style="font:700 14px var(--sans);fill:#8A7A12"><text x="330" y="40">aérobilie</text><text x="330" y="62">occlusion du grêle</text><text x="330" y="84">calcul ectopique</text><text x="330" y="106" style="fill:#596277;font-weight:600">triade de Rigler</text></g>
+        </svg>
+        <div class="ctr" data-fig="E"><button class="play">Lecture</button><button data-s="1" aria-pressed="true">Le calcul</button><button data-s="2" aria-pressed="false">La fistule</button><button data-s="3" aria-pressed="false">La migration</button><button data-s="4" aria-pressed="false">L’enclavement</button></div>
+        <div class="cap" aria-live="polite"></div>
+      </div>
+    </div>
+    <div class="ec">
+      <div class="bloc"><div class="bh"><h4>Ce que dit le cours</h4><span class="bd c">Cours</span></div>
+        <ul>
+          <li>Le calcul d’origine biliaire est une cause d’obstruction endoluminale.</li>
+          <li>L’échographie est utile en cas d’iléus biliaire.</li>
+        </ul></div>
+      <div class="note"><b class="t">Point d’attention</b>Malgré son nom, l’« iléus » biliaire n’est pas une occlusion fonctionnelle : le cours le range bien parmi les obstructions endoluminales. Ne tombe pas dans le piège du vocabulaire.</div>
+      <div class="fgroup"><h3>Fiche complète</h3><span class="bd x">Complément</span></div>
+      <div class="g"><h4>Définition</h4><div><p>Occlusion mécanique du grêle par un volumineux calcul biliaire passé de la vésicule dans le tube digestif à travers une fistule bilio-digestive, le plus souvent cholécysto-duodénale.</p></div></div>
+      <div class="g"><h4>Épidémiologie et terrain</h4><div><p>Cause rare d’occlusion du grêle. Surtout la femme âgée avec comorbidités, avec un antécédent de lithiase vésiculaire ou de cholécystite, parfois méconnu.</p></div></div>
+      <div class="g"><h4>Physiopathologie</h4><div><p>Une cholécystite chronique soude la vésicule au duodénum, la paroi s’érode et une fistule s’ouvre. Un calcul volumineux (souvent plus de 2 cm <span class="av">[À VÉRIFIER]</span>) passe dans le duodénum, migre dans le grêle et s’enclave là où la lumière est la plus étroite, le plus souvent dans l’iléon terminal, près de la valvule iléocæcale. La migration peut être intermittente : l’occlusion « à bascule ».</p></div></div>
+      <div class="g"><h4>Clinique</h4><div><p>Occlusion du grêle chez un sujet âgé, parfois intermittente ou subaiguë, avec vomissements, douleur et déshydratation. Le diagnostic est souvent tardif.</p></div></div>
+      <div class="g"><h4>Examens</h4><div><p><b>ASP</b> : triade de Rigler (aérobilie, occlusion du grêle, calcul ectopique visible s’il est calcifié). <b>TDM</b> : examen de référence, qui montre la triade, la fistule et le calcul. <b>Échographie</b> (cours) : aérobilie, vésicule rétractée, calcul.</p></div></div>
+      <div class="g"><h4>Diagnostic différentiel</h4><div><ul><li>Occlusion sur bride, tumeur du grêle.</li><li>Autres corps étrangers (bézoard).</li><li>Aérobilie après un geste biliaire.</li></ul></div></div>
+      <div class="g"><h4>Traitement</h4><div>
+        <div class="bloc ttt" style="margin:.2rem 0"><div class="bh"><h4>Lever l’obstacle d’abord</h4></div>
+          <p>Réanimation, puis <b>entérolithotomie</b> : ouverture du grêle en amont du calcul et extraction, avec exploration de tout le grêle à la recherche d’un second calcul.</p>
+          <p>Le geste biliaire (cholécystectomie et fermeture de la fistule), en un ou deux temps, est discuté selon l’état du patient, souvent fragile.</p></div></div></div>
+      <div class="g"><h4>Complications et pronostic</h4><div><p>Perforation, péritonite, récidive par calcul résiduel, cholangite. Le pronostic dépend surtout du terrain.</p></div></div>
+      <div class="g"><h4>Pièges</h4><div>
+        <div class="bloc pie" style="margin:.2rem 0"><div class="bh"><h4>Ce qui fait perdre des points</h4></div>
+          <ul>
+            <li>Le nom trompeur : c’est une obstruction mécanique.</li>
+            <li>Chercher un deuxième calcul.</li>
+            <li>L’aérobilie est évocatrice mais non spécifique : elle existe aussi après un geste biliaire.</li>
+            <li>Chez un sujet fragile, choisir le geste le plus simple qui lève l’obstacle.</li>
+          </ul></div></div></div>
+      <div class="test"><div class="q">Teste-toi. Que comprend la triade de Rigler ?</div>
+        <button class="rv" data-reveal="a-bil" aria-expanded="false">Voir la réponse</button>
+        <div class="ans" id="a-bil" hidden><p>Une aérobilie, une occlusion du grêle et un calcul biliaire ectopique visible (s’il est calcifié).</p></div></div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ================= Comparatif ================= -->
+<section class="sec" id="comparatif" data-title="Tableau de synthèse">
+<div class="wide">
+  <h2 class="kt" data-kt>Tableau de synthèse des cinq causes</h2>
+  <p class="lead">Une seule page pour comparer terrain, indice, examen clé, traitement et piège. Passe en mode test pour masquer les cases et les retrouver de mémoire : touche une case floue pour la révéler.</p>
+  <div class="bh" style="justify-content:flex-start;margin:.2rem 0"><span class="bd x">Complément</span><span class="bd c">Reprend les éléments du cours cités plus haut</span></div>
+  <div class="mx-tools"><button id="mxTest" aria-pressed="false">Mode test</button><button id="mxAll">Tout afficher</button></div>
+  <div class="mx-wrap"><div class="mx" id="mx"></div></div>
+  <p class="meta" style="color:var(--muted);font-size:.9rem;margin-top:.6rem">Astuce : sur téléphone, fais défiler le tableau horizontalement.</p>
+</div>
+</section>
+
+<!-- ================= Cas cliniques ================= -->
+<section class="sec" id="cas" data-title="Cas cliniques">
+<div class="wrap">
+  <h2 class="kt" data-kt>Cas cliniques par étapes</h2>
+  <p class="lead">Trois situations de garde. À chaque étape, tu reçois de nouvelles données puis tu choisis. La correction explique chaque option, et la suite du cas dépend de la logique, pas de ton choix.</p>
+  <div class="tabs" data-tabs>
+    <div role="tablist" aria-label="Cas cliniques">
+      <button role="tab">Occlusion sur bride</button>
+      <button role="tab">Volvulus du sigmoïde</button>
+      <button role="tab">Hernie étranglée</button>
+    </div>
+    <div role="tabpanel"><div class="case" id="case0"></div></div>
+    <div role="tabpanel" hidden><div class="case" id="case1"></div></div>
+    <div role="tabpanel" hidden><div class="case" id="case2"></div></div>
+  </div>
+  <p class="meta" style="color:var(--muted);font-size:.9rem;margin-top:1rem">Le cas de l’invagination du nourrisson arrive avec le module 3.</p>
+</div>
+</section>
+
+<!-- ================= QCM ================= -->
+<section class="sec" id="qcm" data-title="Auto-évaluation">
+<div class="wrap">
+  <h2 class="kt" data-kt>Auto-évaluation : 12 QCM corrigés</h2>
+  <p class="lead">Réponds sans rouvrir le cours. Après validation, chaque proposition est expliquée, qu’elle soit juste ou fausse.</p>
+  <div class="qhead"><div class="row"><span id="qScore" aria-live="polite">Score : 0 sur 0 répondu</span><button id="qReset">Recommencer</button></div></div>
+  <div class="qcm" id="qcm"></div>
+  <div class="verdict" id="verdict"></div>
+</div>
+</section>
+
+<!-- ================= Fiche ================= -->
+<section class="sec" id="fiche" data-title="Fiche de révision">
+<div class="wide">
+  <h2 class="kt" data-kt>Fiche de révision</h2>
+  <p class="lead">L’essentiel tient sur un écran. Retourne ensuite les cartes pour t’interroger.</p>
+  <div class="recap">
+    <ul>
+      <li><b>Brides et postopératoire :</b> cicatrice, grêle, TDM avec zone de transition. Conservateur surveillé si pas de gravité ; chirurgie sans délai si strangulation. Iléus postopératoire fonctionnel ≠ occlusion mécanique.</li>
+      <li><b>Hernie étranglée :</b> tuméfaction douloureuse irréductible. Diagnostic clinique, urgence chirurgicale, contrôle de la viabilité de l’anse. Crurale et Richter : pièges.</li>
+      <li><b>Volvulus du sigmoïde :</b> sujet âgé constipé, ballonnement massif asymétrique, U inversé, tourbillon au scanner. Détorsion endoscopique puis sigmoïdectomie programmée ; urgence si nécrose.</li>
+      <li><b>Occlusion néoplasique :</b> plus de 50 ans, côlon gauche, troubles du transit récents. Danger : perforation diastatique du cæcum. Pas de laxatif ni de coloscopie complète en urgence.</li>
+      <li><b>Iléus biliaire :</b> femme âgée, iléon terminal, triade de Rigler. Entérolithotomie, chercher un deuxième calcul. Obstruction mécanique malgré son nom.</li>
+      <li><b>Toujours :</b> examiner les orifices herniaires, chercher la strangulation en premier, réanimer en parallèle.</li>
+    </ul>
+  </div>
+  <p class="score" id="fcScore" aria-live="polite">0 carte maîtrisée</p>
+  <div class="cards" id="cards"></div>
+  <div class="next">
+    <h3>Module 2 terminé ?</h3>
+    <p>Quand tu l’as validé, écris « suite » dans la conversation : je construis le Module 3, l’invagination intestinale aiguë (nourrisson, adulte, post-vaccinale avec la définition de cas Brighton), avec ses QCM et le cas clinique de l’invagination du nourrisson.</p>
+    <p>Si une partie du module 2 te semble faible, dis-moi laquelle avant de passer à la suite.</p>
+  </div>
+</div>
+</section>
+</main>
+</div>
+<script>
+(function(){
+'use strict';
+var $=function(s,r){return (r||document).querySelector(s)};
+var $$=function(s,r){return Array.prototype.slice.call((r||document).querySelectorAll(s))};
+var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+/* ---------- Titres cinétiques : un mot par masque ---------- */
+$$('[data-kt]').forEach(function(h){
+  var t=h.textContent.trim();
+  h.setAttribute('aria-label',t);
+  h.innerHTML=t.split(/\s+/).map(function(w,i){return '<span class="w" aria-hidden="true"><span style="--i:'+i+'">'+w+'</span></span>'}).join(' ');
+});
+function heroGo(){
+  var h=$('#heroH1'),d=$('#heroDeck');
+  if(h)h.classList.add('in');
+  if(d)d.classList.add('in');
+}
+var heroDone=false;
+function heroOnce(){if(!heroDone){heroDone=true;heroGo()}}
+if(document.fonts&&document.fonts.ready){document.fonts.ready.then(function(){setTimeout(heroOnce,80)})}
+setTimeout(heroOnce,900);
+
+/* ---------- Navigation latérale, progression, révélations ---------- */
+var secs=$$('section.sec');
+var navList=$('#navList');
+secs.forEach(function(s){
+  var li=document.createElement('li');
+  var a=document.createElement('a');
+  a.href='#'+s.id;a.dataset.for=s.id;
+  a.innerHTML='<span class="dot"></span><span>'+s.dataset.title+'</span>';
+  li.appendChild(a);navList.appendChild(li);
+});
+var seen={};
+function updProgress(){
+  var n=Object.keys(seen).length,t=secs.length,pct=Math.round(n/t*100);
+  $('#pbarSide').style.width=pct+'%';
+  $('#pbarTop').style.width=pct+'%';
+  $('#pTxt').textContent=n+(n>1?' sections lues':' section lue')+' sur '+t;
+}
+if('IntersectionObserver' in window){
+  var ioSeen=new IntersectionObserver(function(es){
+    es.forEach(function(e){
+      if(e.isIntersecting){
+        var id=e.target.id,a=$('a[data-for="'+id+'"]');
+        seen[id]=1;if(a)a.classList.add('seen');updProgress();
+      }
+    });
+  },{rootMargin:'0px 0px -55% 0px'});
+  var ioAct=new IntersectionObserver(function(es){
+    es.forEach(function(e){
+      if(e.isIntersecting){$$('#navList a').forEach(function(a){a.classList.toggle('active',a.dataset.for===e.target.id)})}
+    });
+  },{rootMargin:'-25% 0px -65% 0px'});
+  secs.forEach(function(s){ioSeen.observe(s);ioAct.observe(s)});
+  var ioIn=new IntersectionObserver(function(es){
+    es.forEach(function(e){
+      if(e.isIntersecting){e.target.classList.add('in');ioIn.unobserve(e.target)}
+    });
+  },{threshold:.2,rootMargin:'0px 0px -8% 0px'});
+  $$('.kt:not(#heroH1),.etio,.g').forEach(function(el){ioIn.observe(el)});
+}else{
+  $$('.kt,.etio,.g').forEach(function(el){el.classList.add('in')});
+}
+var sp=$('#sp');
+function onScroll(){
+  var h=document.documentElement.scrollHeight-window.innerHeight;
+  sp.style.transform='scaleX('+(h>0?Math.min(1,window.scrollY/h):0)+')';
+}
+window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+
+var side=$('#side'),ov=$('#ov'),mb=$('#menuBtn');
+function menu(open){side.classList.toggle('open',open);ov.classList.toggle('show',open);mb.setAttribute('aria-expanded',open?'true':'false')}
+mb.addEventListener('click',function(){menu(!side.classList.contains('open'))});
+ov.addEventListener('click',function(){menu(false)});
+$$('#side a').forEach(function(a){a.addEventListener('click',function(){menu(false)})});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')menu(false)});
+
+/* ---------- Carte du héros ---------- */
+var map=$('#map');
+if(map){
+  if(reduce){
+    var an=$('#stoneAnim');if(an&&an.parentNode)an.parentNode.removeChild(an);
+    var st=$('#stone');if(st){st.setAttribute('cx','392');st.setAttribute('cy','448')}
+  }
+  $$('#mapKeys a').forEach(function(a){
+    var k=a.dataset.k,hs=$('.hs[data-k="'+k+'"]',map);
+    function on(){a.classList.add('hl');if(hs)hs.classList.add('hl')}
+    function off(){a.classList.remove('hl');if(hs)hs.classList.remove('hl')}
+    a.addEventListener('mouseenter',on);a.addEventListener('mouseleave',off);a.addEventListener('focus',on);a.addEventListener('blur',off);
+  });
+  $$('.hs',map).forEach(function(h){
+    var k=h.dataset.k,a=$('#mapKeys a[data-k="'+k+'"]');
+    h.addEventListener('mouseenter',function(){if(a)a.classList.add('hl')});
+    h.addEventListener('mouseleave',function(){if(a)a.classList.remove('hl')});
+  });
+  var box=$('.mapbox');
+  if(!reduce&&box&&window.matchMedia('(pointer:fine)').matches){
+    box.addEventListener('mousemove',function(e){
+      var r=box.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;
+      map.style.transform='perspective(1000px) rotateY('+(x*6)+'deg) rotateX('+(-y*5)+'deg)';
+    });
+    box.addEventListener('mouseleave',function(){map.style.transform=''});
+    map.style.transition='transform .4s cubic-bezier(.16,.84,.24,1)';
+  }
+}
+
+/* ---------- Onglets ---------- */
+$$('[data-tabs]').forEach(function(box){
+  var tabs=$$('[role=tab]',box),panels=$$('[role=tabpanel]',box);
+  function sel(i){tabs.forEach(function(t,j){t.setAttribute('aria-selected',j===i?'true':'false');t.tabIndex=j===i?0:-1;panels[j].hidden=(j!==i)})}
+  tabs.forEach(function(t,i){
+    t.addEventListener('click',function(){sel(i)});
+    t.addEventListener('keydown',function(e){
+      var n=-1;
+      if(e.key==='ArrowRight')n=(i+1)%tabs.length;
+      if(e.key==='ArrowLeft')n=(i-1+tabs.length)%tabs.length;
+      if(n>=0){sel(n);tabs[n].focus();e.preventDefault()}
+    });
+  });
+  sel(0);
+});
+
+/* ---------- Révéler une réponse ---------- */
+$$('[data-reveal]').forEach(function(b){
+  b.addEventListener('click',function(){
+    var t=document.getElementById(b.dataset.reveal),open=t.hidden;
+    t.hidden=!open;
+    b.setAttribute('aria-expanded',open?'true':'false');
+    b.textContent=open?'Masquer la réponse':'Voir la réponse';
+  });
+});
+})();
+</script>
+<script>
+(function(){
+'use strict';
+var $=function(s,r){return (r||document).querySelector(s)};
+var $$=function(s,r){return Array.prototype.slice.call((r||document).querySelectorAll(s))};
+var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+function lerp(a,b,t){return a+(b-a)*t}
+function clamp(v,a,b){return Math.max(a,Math.min(b,v))}
+function ease(p){return p<.5?4*p*p*p:1-Math.pow(-2*p+2,3)/2}
+function smooth(x){x=clamp(x,0,1);return x*x*(3-2*x)}
+function hex(c){return [parseInt(c.slice(1,3),16),parseInt(c.slice(3,5),16),parseInt(c.slice(5,7),16)]}
+function mix(c1,c2,t){var a=hex(c1),b=hex(c2);return 'rgb('+Math.round(lerp(a[0],b[0],t))+','+Math.round(lerp(a[1],b[1],t))+','+Math.round(lerp(a[2],b[2],t))+')'}
+function sa(id,o){var el=document.getElementById(id);if(!el)return;for(var k in o){el.setAttribute(k,o[k])}}
+function tween(state,to,dur,upd,done){
+  var keys=Object.keys(to),f={},start=null,raf=null,stopped=false;
+  keys.forEach(function(k){f[k]=state[k]});
+  if(reduce||dur<=0){keys.forEach(function(k){state[k]=to[k]});upd(state);if(done)done();return function(){}}
+  function step(now){
+    if(stopped)return;
+    if(start===null)start=now;
+    var p=Math.min(1,(now-start)/dur),e=ease(p);
+    keys.forEach(function(k){state[k]=lerp(f[k],to[k],e)});
+    upd(state);
+    if(p<1)raf=requestAnimationFrame(step);else if(done)done();
+  }
+  raf=requestAnimationFrame(step);
+  return function(){stopped=true;if(raf)cancelAnimationFrame(raf)};
+}
+function onVisible(el,cb){
+  if(!('IntersectionObserver' in window)){cb();return}
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(e){if(e.isIntersecting){io.disconnect();cb()}});
+  },{threshold:.5});
+  io.observe(el);
+}
+
+/* ---------- Figure à étapes ---------- */
+function stepFig(id,cfg){
+  var box=document.getElementById('fig'+id),ctr=$('.ctr',box),cap=$('.cap',box);
+  var btns=$$('button[data-s]',ctr),playBtn=$('.play',ctr),timer=null,cur=1;
+  function go(n,instant){
+    cur=n;
+    btns.forEach(function(b){b.setAttribute('aria-pressed',(+b.dataset.s===n)?'true':'false')});
+    cap.innerHTML=cfg.text[n-1];
+    cfg.go(n,instant);
+  }
+  function stop(label){clearTimeout(timer);timer=null;playBtn.textContent=label||'Lecture'}
+  function play(){
+    stop();playBtn.textContent='Arrêter';
+    var n=1;go(1);
+    (function next(){
+      timer=setTimeout(function(){
+        if(n<cfg.text.length){n++;go(n);next()}else{stop('Rejouer')}
+      },2900);
+    })();
+  }
+  btns.forEach(function(b){b.addEventListener('click',function(){stop();go(+b.dataset.s)})});
+  playBtn.addEventListener('click',function(){if(timer)stop();else play()});
+  go(1,true);
+  onVisible(box,function(){if(!reduce)play()});
+}
+
+/* ---------- Figure à curseur ---------- */
+function sliderFig(id,inputId,state,key,max,draw,capFn){
+  var box=document.getElementById('fig'+id),inp=document.getElementById(inputId),play=$('.play',box),cap=$('.cap',box),cancel=null;
+  function render(){draw(state[key]);cap.innerHTML=capFn(state[key]);inp.value=state[key]}
+  inp.addEventListener('input',function(){if(cancel){cancel();cancel=null}state[key]=+inp.value;render();play.textContent='Lecture'});
+  play.addEventListener('click',function(){
+    if(cancel){cancel();cancel=null;play.textContent='Lecture';return}
+    var from=state[key]>=max-1?0:state[key];
+    state[key]=from;
+    var to={};to[key]=max;
+    play.textContent='Arrêter';
+    cancel=tween(state,to,(max-from)/max*7000,render,function(){cancel=null;play.textContent='Rejouer'});
+  });
+  render();
+  onVisible(box,function(){if(!reduce&&state[key]===0)play.click()});
+}
+
+/* ---------- A : brides ---------- */
+var A={band:0,k:0,d:0},cancelA=null;
+function drawA(){
+  var yk=230-110*A.k,wA=34+54*A.d,wB=26-6*A.d;
+  var p1='M30 230 H250 Q318 230 320 '+yk,p2='M320 '+yk+' Q324 230 392 230 H610';
+  sa('faO1',{d:p1,'stroke-width':wA+7});sa('faF1',{d:p1,'stroke-width':wA});
+  sa('faO2',{d:p2,'stroke-width':wB+7});sa('faF2',{d:p2,'stroke-width':wB});
+  sa('faBand',{y2:48+A.band*(yk-8-48)});
+  sa('faGas',{opacity:clamp(A.d*1.4,0,1)});
+  sa('faL1',{opacity:A.d});sa('faL2',{opacity:A.k});sa('faL3',{opacity:A.band});
+}
+stepFig('A',{
+  text:[
+    '<b>La bride.</b> Après une chirurgie abdominale, des adhérences fibreuses se forment. L’une d’elles relie la paroi à une anse grêle.',
+    '<b>L’angulation.</b> La bride tire sur l’anse et la plicature : la lumière se ferme. Si elle formait un anneau, elle étranglerait l’anse.',
+    '<b>La distension.</b> En amont, l’intestin se dilate (gaz, liquide) ; en aval, il se collabe. Si la vascularisation est entravée, on passe à la strangulation.'
+  ],
+  go:function(n,instant){
+    var T={1:{band:1,k:0,d:0},2:{band:1,k:1,d:0},3:{band:1,k:1,d:1}}[n];
+    if(cancelA)cancelA();
+    cancelA=tween(A,T,instant?0:1100,drawA);
+  }
+});
+
+/* ---------- B : hernie ---------- */
+var B={out:.75,col:0,sw:0,isch:0},cancelB=null;
+function drawB(){
+  var gap=lerp(112,36,B.col),cx=350,apex=230-B.out*165,w=22+16*B.sw;
+  sa('fbWL',{x:40,width:cx-gap/2-40});
+  sa('fbWR',{x:cx+gap/2,width:610-(cx+gap/2)});
+  var d='M60 250 H300 Q335 250 335 215 V'+(apex+18)+' Q335 '+apex+' 350 '+apex+' Q365 '+apex+' 365 '+(apex+18)+' V215 Q365 250 400 250 H590';
+  sa('fbO',{d:d,'stroke-width':w+7});
+  sa('fbF',{d:d,'stroke-width':w,stroke:mix('#F3C1BD','#5B2450',B.isch)});
+  sa('fbSac',{x:296,y:apex-22,width:108,height:Math.max(0,140-(apex-22)),opacity:B.out>.5?1:0});
+  sa('fbRing',{opacity:B.col,rx:lerp(40,26,B.col)});
+  sa('fbT1',{opacity:B.col});
+  sa('fbT2',{opacity:B.out>.5?1:0,y:Math.max(apex-2,60)});
+  sa('fbT3',{opacity:1});
+}
+stepFig('B',{
+  text:[
+    '<b>La hernie.</b> Une anse passe par un orifice de la paroi et fait saillie dans un sac. Tant qu’elle se réduit, il n’y a pas d’urgence.',
+    '<b>Le collet se serre.</b> L’orifice étroit comprime l’anse : elle ne rentre plus (hernie incarcérée).',
+    '<b>L’œdème.</b> Le retour veineux est bloqué : l’anse gonfle et serre encore plus le collet. Les artères sont à leur tour comprimées.',
+    '<b>L’ischémie.</b> L’anse devient violacée puis nécrosée : risque de perforation et de péritonite. C’est l’étranglement.'
+  ],
+  go:function(n,instant){
+    var T={1:{out:.75,col:0,sw:0,isch:0},2:{out:1,col:.7,sw:0,isch:0},3:{out:1,col:1,sw:1,isch:.45},4:{out:1,col:1,sw:1,isch:1}}[n];
+    if(cancelB)cancelB();
+    cancelB=tween(B,T,instant?0:1100,drawB);
+  }
+});
+
+/* ---------- C : volvulus ---------- */
+var C={th:0};
+function drawC(th){
+  var rad=th*Math.PI/180,c=Math.cos(rad),dist=smooth(th/270),isch=clamp((th-360)/120,0,1);
+  var xa=320-34*c,xb=320+34*c,H=70+100*dist,wl=26+36*dist,wm=24+12*dist,col=mix('#F3C1BD','#5B2450',isch);
+  var Ap='M'+xa+' 270 C'+xa+' 225 285 215 285 170',Bp='M'+xb+' 270 C'+xb+' 225 355 215 355 170';
+  var Lp='M285 170 C'+(285-70*dist)+' '+(170-H)+' '+(355+70*dist)+' '+(170-H)+' 355 170';
+  sa('fcAo',{d:Ap,'stroke-width':wm+7});sa('fcAf',{d:Ap,'stroke-width':wm,stroke:col});
+  sa('fcBo',{d:Bp,'stroke-width':wm+7});sa('fcBf',{d:Bp,'stroke-width':wm,stroke:col});
+  sa('fcLo',{d:Lp,'stroke-width':wl+7});sa('fcLf',{d:Lp,'stroke-width':wl,stroke:col});
+  sa('fcFan',{points:xa+',270 '+xb+',270 355,170 285,170'});
+  sa('fcGas',{opacity:clamp(dist*1.3,0,1)});
+  var t=document.getElementById('fcTv');if(t)t.textContent=Math.round(th)+' °';
+}
+function capC(th){
+  if(th<45)return '<b>Sigmoïde en place.</b> Pas de torsion : le transit est libre.';
+  if(th<135)return '<b>Torsion modérée.</b> La lumière se pince, le transit se ralentit.';
+  if(th<315)return '<b>Torsion serrée.</b> L’anse est fermée à ses deux extrémités : les gaz s’accumulent. C’est une occlusion colique en anse fermée.';
+  if(th<405)return '<b>Anse très dilatée.</b> Le côlon devient un ballon : ballonnement massif et asymétrique.';
+  return '<b>Torsion extrême.</b> Le pédicule vasculaire est comprimé : strangulation, avec risque de nécrose et de perforation.';
+}
+sliderFig('C','sC',C,'th',540,drawC,capC);
+
+/* ---------- D : cancer ---------- */
+var D={p:0};
+(function(){
+  var g=document.getElementById('fdStool'),i,c;
+  for(i=0;i<7;i++){
+    c=document.createElementNS('http://www.w3.org/2000/svg','circle');
+    c.setAttribute('cx',210+i*26);c.setAttribute('cy',160+(i%2?11:-11));c.setAttribute('r',11);
+    g.appendChild(c);
+  }
+})();
+function drawD(p){
+  var ry=p*38,n=Math.round(p*7),kids=$$('#fdStool circle'),col=mix('#F3C1BD','#B3261E',clamp((p-.7)/.3,0,1));
+  sa('fdTop',{ry:ry});sa('fdBot',{ry:ry});
+  sa('fdTt',{opacity:p>.08?1:0});
+  sa('fdStool',{opacity:1});
+  kids.forEach(function(k,idx){k.setAttribute('opacity',idx<n?1:0)});
+  sa('fdCae',{r:34+p*28,fill:col});
+  var t=document.getElementById('fdTc');if(t)t.textContent=p>.85?'cæcum menacé':'cæcum';
+}
+function capD(p){
+  if(p<.2)return '<b>Tumeur débutante.</b> La lumière est libre : pas de symptôme obstructif.';
+  if(p<.55)return '<b>Sténose.</b> Troubles du transit récents, selles plus rares.';
+  if(p<.85)return '<b>Sub-occlusion.</b> Douleurs, ballonnement ; les selles s’accumulent en amont.';
+  return '<b>Occlusion.</b> Arrêt absolu des matières et des gaz. Si la valvule iléocæcale est continente, le cæcum devient une anse fermée et risque la perforation.';
+}
+(function(){
+  var raw={p:0};
+  var tmp={p:0};
+  sliderFig('D','sD',tmp,'p',100,function(v){drawD(v/100)},function(v){return capD(v/100)});
+})();
+
+/* ---------- E : iléus biliaire ---------- */
+var E={s:0},cancelE=null,bo=document.getElementById('feBo'),Ltot=bo?bo.getTotalLength():1;
+['feAir','feFist','feChips'].forEach(function(id){var el=document.getElementById(id);if(el)el.style.transition='opacity .7s'});
+function drawE(){
+  var s=E.s,x,y,t,u,pt;
+  if(s<=1){x=lerp(130,126,s);y=lerp(64,118,s)}
+  else if(s<=2){t=s-1;x=lerp(126,118,t);y=lerp(118,150,t)}
+  else{u=clamp(s-2,0,1);pt=bo.getPointAtLength(u*Ltot);x=pt.x;y=pt.y}
+  sa('feStone',{cx:x,cy:y});
+}
+stepFig('E',{
+  text:[
+    '<b>Le calcul.</b> Une cholécystite chronique soude la vésicule au duodénum ; un volumineux calcul reste dans la vésicule.',
+    '<b>La fistule.</b> La paroi s’érode : une fistule cholécysto-duodénale s’ouvre et le calcul passe dans le tube digestif.',
+    '<b>La migration.</b> Le calcul descend dans le grêle. De l’air remonte dans les voies biliaires : c’est l’aérobilie.',
+    '<b>L’enclavement.</b> Dans l’iléon terminal, là où la lumière se rétrécit, il bloque : occlusion du grêle. Triade de Rigler : aérobilie, occlusion, calcul ectopique.'
+  ],
+  go:function(n,instant){
+    var target={1:0,2:1,3:2.55,4:3}[n];
+    $('#feFist').style.opacity=n>=2?1:0;
+    $('#feAir').style.opacity=n>=3?1:0;
+    $('#feChips').style.opacity=n>=4?1:0;
+    if(cancelE)cancelE();
+    cancelE=tween(E,{s:target},instant?0:(700*Math.abs(target-E.s)+300),drawE);
+  }
+});
+})();
+</script>
+<script>
+(function(){
+'use strict';
+var $=function(s,r){return (r||document).querySelector(s)};
+var $$=function(s,r){return Array.prototype.slice.call((r||document).querySelectorAll(s))};
+var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+/* ---------- Quel terrain, quelle cause ? ---------- */
+var NAMES={br:'Brides',he:'Hernie étranglée',vo:'Volvulus du sigmoïde',ne:'Occlusion néoplasique',bi:'Iléus biliaire'};
+var VG=[
+ ['Femme de 84 ans. Vomissements répétés depuis deux jours, occlusion du grêle à l’ASP, avec une aérobilie.','bi','L’aérobilie avec une occlusion du grêle chez une femme âgée évoque l’iléus biliaire (triade de Rigler).'],
+ ['Homme de 79 ans, en institution, constipé chronique. Ballonnement massif et asymétrique, arrêt absolu des gaz, ampoule rectale vide.','vo','Terrain typique du volvulus du sigmoïde : sujet âgé constipé, ballonnement massif et asymétrique.'],
+ ['Homme de 56 ans, appendicectomie compliquée il y a dix ans. Occlusion du grêle d’installation progressive, cicatrice médiane.','br','Antécédent de chirurgie abdominale et cicatrice : la bride est la première hypothèse.'],
+ ['Femme de 80 ans, vomissements, douleur de l’aine avec une petite tuméfaction dure, irréductible, sous le pli inguinal.','he','Tuméfaction douloureuse et irréductible au niveau d’un orifice : hernie étranglée (ici crurale probable).'],
+ ['Homme de 67 ans, rectorragies et amaigrissement depuis trois mois, puis occlusion basse avec cadre colique et ampoule rectale vide.','ne','Signes d’alarme digestifs puis occlusion colique après 50 ans : cancer colorectal jusqu’à preuve du contraire.']
+];
+(function(){
+  var box=$('#vg'),got=0,done=0;
+  VG.forEach(function(it){
+    var d=document.createElement('div');d.className='it';
+    d.innerHTML='<p>'+it[0]+'</p><div class="opts"></div><div class="fb" hidden></div>';
+    var opts=$('.opts',d);
+    Object.keys(NAMES).forEach(function(k){
+      var b=document.createElement('button');b.textContent=NAMES[k];
+      b.addEventListener('click',function(){
+        $$('button',opts).forEach(function(x){x.disabled=true});
+        var ok=(k===it[1]);
+        b.classList.add(ok?'ok':'no');
+        if(!ok){$$('button',opts).forEach(function(x){if(x.textContent===NAMES[it[1]])x.classList.add('ok')})}
+        var fb=$('.fb',d);fb.hidden=false;
+        fb.innerHTML=(ok?'<b>Exact.</b> ':'<b>Pas tout à fait : '+NAMES[it[1]]+'.</b> ')+it[2];
+        done++;if(ok)got++;
+        $('#vgScore').textContent='Résultat : '+got+' sur '+done+' classé'+(done>1?'s':'')+' ('+VG.length+' au total).';
+      });
+      opts.appendChild(b);
+    });
+    box.appendChild(d);
+  });
+})();
+
+/* ---------- Tableau de synthèse ---------- */
+var MX_H=['Brides','Hernie étranglée','Volvulus du sigmoïde','Néoplasique','Iléus biliaire'];
+var MX=[
+ ['Siège','Grêle','Grêle surtout (aussi épiploon, côlon)','Côlon (sigmoïde)','Côlon, surtout gauche ; grêle plus rarement','Grêle (iléon terminal)'],
+ ['Mécanisme','Obstruction ou strangulation','Strangulation','Strangulation, anse fermée','Obstruction pariétale (ou compression par carcinose)','Obstruction endoluminale'],
+ ['Terrain','Antécédent de chirurgie abdominopelvienne','Orifice herniaire ; femme âgée pour la crurale','Sujet âgé, constipé chronique, institutionnalisé','Plus de 50 ans, rectorragies, amaigrissement','Femme âgée, antécédent biliaire'],
+ ['Indice clinique','Cicatrice abdominale','Tuméfaction douloureuse irréductible','Ballonnement massif asymétrique','Troubles du transit récents, ampoule rectale vide','Occlusion du grêle parfois intermittente'],
+ ['Examen clé','TDM : zone de transition','Examen des orifices ± TDM ou échographie','ASP en U inversé puis TDM (tourbillon)','TDM puis coloscopie différée','TDM ou ASP : triade de Rigler'],
+ ['Traitement','Conservateur surveillé ou section de bride','Chirurgie urgente, viabilité de l’anse','Détorsion endoscopique puis sigmoïdectomie programmée','Réanimation, chirurgie ou prothèse, décision en équipe','Entérolithotomie ± geste biliaire'],
+ ['Piège','L’absence de cicatrice n’élimine pas','Crurale, Richter, anse réintégrée ischémique','Détorsion sans chirurgie : récidive','Perforation du cæcum ; pas de laxatif','Nom trompeur ; deuxième calcul']
+];
+(function(){
+  var box=$('#mx'),h='<div class="h"></div>';
+  MX_H.forEach(function(c){h+='<div class="h">'+c+'</div>'});
+  MX.forEach(function(r){
+    h+='<div class="r">'+r[0]+'</div>';
+    for(var i=1;i<6;i++)h+='<div class="c" data-col="'+i+'">'+r[i]+'</div>';
+  });
+  box.innerHTML=h;
+  var cells=$$('.c',box);
+  cells.forEach(function(c){
+    c.addEventListener('click',function(){if(box.classList.contains('test'))c.classList.toggle('shown')});
+    c.addEventListener('mouseenter',function(){cells.forEach(function(x){x.classList.toggle('col',x.dataset.col===c.dataset.col)})});
+  });
+  box.addEventListener('mouseleave',function(){cells.forEach(function(x){x.classList.remove('col')})});
+  $('#mxTest').addEventListener('click',function(e){
+    var on=!box.classList.contains('test');
+    box.classList.toggle('test',on);
+    cells.forEach(function(c){c.classList.remove('shown')});
+    e.currentTarget.setAttribute('aria-pressed',on?'true':'false');
+  });
+  $('#mxAll').addEventListener('click',function(){box.classList.remove('test');$('#mxTest').setAttribute('aria-pressed','false')});
+})();
+
+/* ---------- Cas cliniques ---------- */
+var CASES=[
+{intro:'Homme de 52 ans, appendicectomie compliquée il y a dix ans. Il consulte aux urgences pour des vomissements depuis 24 heures, une douleur abdominale crampiforme et l’arrêt des gaz depuis la veille.',
+ steps:[
+  {data:'Examen : cicatrice médiane sous-ombilicale, abdomen modérément météorisé, bruits hydro-aériques fréquents, pas de défense. Pouls 96/min, tension normale, apyrétique. Orifices herniaires libres.',q:'Quelle est votre hypothèse principale ?',o:[
+   ['Occlusion du grêle sur bride',1,'Antécédent de chirurgie, cicatrice, vomissements, arrêt des gaz, bruits fréquents : tableau d’obstruction du grêle sur bride.'],
+   ['Gastro-entérite',0,'Elle donnerait une diarrhée avec émission de gaz, et pas de météorisme avec bruits hydro-aériques.'],
+   ['Iléus paralytique',0,'Il est silencieux, d’installation progressive, dans un contexte déclenchant ; ici les bruits sont fréquents et la douleur crampiforme.'],
+   ['Volvulus du sigmoïde',0,'Il donne un ballonnement massif et asymétrique chez un sujet âgé constipé, ce que rien n’évoque ici.']]},
+  {data:'Le patient est stable. L’abdomen reste souple.',q:'Quels sont vos premiers gestes ?',o:[
+   ['Hospitalisation, jeûne strict, voie veineuse avec réhydratation, sonde nasogastrique, ionogramme et lactate, puis scanner abdomino-pelvien',1,'C’est la réanimation et la décompression du module 1, associées à l’imagerie qui précise le mécanisme et la gravité.'],
+   ['Retour à domicile avec antalgiques et régime léger',0,'Une occlusion est une urgence : le patient est à jeun strict et doit être surveillé.'],
+   ['Laxatifs par voie orale',0,'Contre-indiqués devant une occlusion : ils aggravent la distension et le risque de perforation.'],
+   ['Laparotomie immédiate sans bilan',0,'Rien ne la justifie à ce stade : l’abdomen est souple et le patient stable.']]},
+  {data:'Scanner : dilatation du grêle d’amont, zone de transition en fosse iliaque droite, grêle d’aval collabé. Pas de signe d’ischémie, pas de liquide libre. Lactate normal.',q:'Quelle conduite retenez-vous ?',o:[
+   ['Traitement conservateur surveillé (jeûne, sonde nasogastrique, réhydratation) avec réévaluation clinique rapprochée',1,'Occlusion probablement incomplète sans signe de gravité : le traitement conservateur est possible, à condition de réévaluer régulièrement.'],
+   ['Laparotomie immédiate',0,'Pas de strangulation ni de péritonite : elle n’est pas indiquée d’emblée.'],
+   ['Lavement baryté',0,'Il n’a pas sa place dans une occlusion du grêle.'],
+   ['Sortie avec antalgiques',0,'Un patient en occlusion reste hospitalisé et surveillé.']]},
+  {urg:1,data:'Trente-six heures plus tard, la douleur est devenue permanente, la température est à 38,4 °C, le pouls à 118/min. Défense en fosse iliaque droite, lactate élevé.',q:'Que faites-vous ?',o:[
+   ['Chirurgie urgente',1,'Douleur permanente, fièvre, tachycardie, défense, lactate élevé : strangulation jusqu’à preuve du contraire. On opère sans attendre.'],
+   ['Poursuivre 48 heures de plus le traitement conservateur',0,'C’est le piège du traitement conservateur sans réévaluation : la strangulation est manquée.'],
+   ['Ajouter un antispasmodique et attendre',0,'Il masque la douleur sans traiter l’ischémie.'],
+   ['Refaire un scanner dans 24 heures',0,'Le tableau clinique suffit à décider : retarder expose à la nécrose.']]}
+ ],
+ fin:'On traite d’abord en conservateur une occlusion incomplète sans gravité, mais on réévalue régulièrement, et on opère sans délai dès les signes de strangulation.'},
+{intro:'Homme de 74 ans, résident d’un établissement de soins, constipé chronique. Douleur et ballonnement massif depuis 12 heures, arrêt des matières et des gaz.',
+ steps:[
+  {data:'Abdomen très distendu, tympanique, asymétrique. Douleur modérée, pas de défense. Ampoule rectale vide au toucher rectal. Pouls 100/min, apyrétique.',q:'Quelle est votre hypothèse ?',o:[
+   ['Volvulus du sigmoïde',1,'Sujet âgé constipé, ballonnement massif et asymétrique, arrêt absolu des gaz, ampoule rectale vide.'],
+   ['Occlusion du grêle sur bride',0,'Elle donnerait un météorisme discret et central avec des vomissements précoces ; ici le météorisme est massif et colique.'],
+   ['Gastro-entérite',0,'Pas de diarrhée, et un arrêt des gaz.'],
+   ['Hernie étranglée',0,'Aucune tuméfaction d’un orifice n’est signalée ; le tableau est celui d’une occlusion colique.']]},
+  {data:'ASP : anse colique très dilatée en U inversé, dont les deux branches convergent vers le pelvis, peu de niveaux hydro-aériques.',q:'Quel examen demandez-vous ensuite pour juger de la gravité ?',o:[
+   ['Scanner abdomino-pelvien injecté',1,'Il confirme la torsion (signe du tourbillon) et cherche des signes d’ischémie qui orientent vers la chirurgie.'],
+   ['Coloscopie complète en urgence',0,'Elle n’a pas de place d’emblée ; la rectosigmoïdoscopie sert à la détorsion, après évaluation de la gravité.'],
+   ['Un deuxième ASP dans trois jours',0,'Le temps compte : la nécrose peut survenir.'],
+   ['Aucun examen, antalgiques seuls',0,'Il faut confirmer le diagnostic et évaluer la gravité.']]},
+  {data:'Scanner : torsion du mésocôlon avec signe du tourbillon, paroi colique bien rehaussée, pas d’air dans la paroi, pas de liquide libre. Lactate normal.',q:'Quelle est la conduite ?',o:[
+   ['Détorsion endoscopique, avec contrôle de la muqueuse',1,'Sans signe de gravité, c’est le geste de première intention : il lève l’occlusion et juge de la viabilité.'],
+   ['Sigmoïdectomie en urgence immédiate',0,'Réservée aux signes de gravité ou à l’échec de la détorsion.'],
+   ['Laxatifs et lavements évacuateurs',0,'Contre-indiqués : risque de perforation, et ils ne détordent pas le sigmoïde.'],
+   ['Surveillance simple, sans geste',0,'L’anse fermée risque la nécrose : il faut détordre.']]},
+  {data:'La détorsion réussit : émission abondante de gaz et de selles, muqueuse d’aspect viable. Le patient va mieux.',q:'Que prévoyez-vous ensuite ?',o:[
+   ['Une sigmoïdectomie programmée, sauf contre-indication liée au terrain',1,'Sans chirurgie, la récidive est fréquente : on prévoit la résection à froid.'],
+   ['Sortie sans autre projet',0,'C’est le piège classique : la récidive est fréquente.'],
+   ['Un régime riche en fibres seul',0,'Il ne corrige ni la longueur du sigmoïde ni l’étroitesse du méso.'],
+   ['Une nouvelle détorsion à chaque récidive',0,'Possible chez un patient inopérable, mais ce n’est pas le projet de base.']]}
+ ],
+ fin:'Détorsion endoscopique si pas de gravité, urgence chirurgicale si nécrose ou échec, et sigmoïdectomie programmée pour éviter la récidive.'},
+{intro:'Femme de 81 ans, vomissements depuis 18 heures, douleur de l’aine et arrêt des gaz.',
+ steps:[
+  {data:'Tuméfaction de 3 cm, dure, douloureuse, irréductible, sans impulsion à la toux, sous le pli de l’aine. Abdomen météorisé. Pouls 104/min.',q:'Quel est votre diagnostic ?',o:[
+   ['Hernie crurale étranglée',1,'Femme âgée, petite tuméfaction dure, douloureuse et irréductible sous le pli inguinal, avec occlusion.'],
+   ['Adénopathie inguinale',0,'Elle n’expliquerait pas l’occlusion ; l’irréductibilité et le contexte orientent vers la hernie.'],
+   ['Abcès de la région inguinale',0,'Possible en différentiel, mais l’occlusion associée fait préférer la hernie étranglée.'],
+   ['Volvulus du sigmoïde',0,'Il ne donne pas de tuméfaction de l’aine.']]},
+  {data:'Il n’y a pas d’autre signe de gravité à l’examen. La patiente est stable après la perfusion.',q:'Quelle est la conduite ?',o:[
+   ['Réanimation brève puis intervention chirurgicale urgente',1,'La hernie étranglée est une urgence chirurgicale : on ne retarde pas l’intervention.'],
+   ['Taxis prolongé et énergique',0,'Dangereux : risque de réduire une anse ischémique ou de la perforer.'],
+   ['Antibiotiques et surveillance pendant 48 heures',0,'Le retard expose à la nécrose.'],
+   ['Imagerie différée au lendemain',0,'Le diagnostic est clinique : on n’attend pas une imagerie.']]},
+  {urg:1,data:'Au bloc, une anse grêle violacée est découverte dans le sac. Après ouverture du collet et réchauffement, elle reste sombre, sans péristaltisme ni pulsations mésentériques.',q:'Que faites-vous de cette anse ?',o:[
+   ['La réséquer, puis rétablir la continuité selon le contexte',1,'Une anse qui ne se recolore pas, sans péristaltisme ni pulsations, est nécrosée : on la résèque.'],
+   ['La réintégrer telle quelle',0,'Une anse nécrosée réintégrée se perfore : péritonite.'],
+   ['La laisser dans le sac et refermer',0,'Aucune justification : la nécrose persiste.'],
+   ['Attendre 24 heures pour juger de sa viabilité',0,'Le jugement se fait au bloc, avec les critères de viabilité.']]}
+ ],
+ fin:'Hernie étranglée : urgence sans imagerie préalable. Au bloc, on juge la viabilité de l’anse (couleur, péristaltisme, pulsations) et on résèque si nécrose.'}
+];
+function runCase(root,C){
+  var score=0;
+  root.innerHTML='<p class="intro">'+C.intro+'</p><div class="csteps"></div>';
+  var box=$('.csteps',root);
+  function show(i){
+    var s=C.steps[i],el=document.createElement('div');
+    el.className='cstep';
+    el.innerHTML='<div class="data'+(s.urg?' urg':'')+'">'+s.data+'</div><div class="q">'+s.q+'</div><div class="copts"></div>';
+    var opts=$('.copts',el);
+    var btns=s.o.map(function(o,oi){
+      var b=document.createElement('button');
+      b.innerHTML=o[0]+'<div class="ex"><b>'+(o[1]?'Juste.':'Faux.')+'</b> '+o[2]+'</div>';
+      b.addEventListener('click',function(){
+        btns.forEach(function(x,xi){
+          x.disabled=true;x.classList.add('show');
+          if(s.o[xi][1]&&xi!==oi)x.classList.add('miss');
+        });
+        b.classList.add(o[1]?'ok':'no');
+        if(o[1])score++;
+        var nx=document.createElement('button');nx.className='cnext';
+        if(i<C.steps.length-1){
+          nx.textContent='Étape suivante';
+          nx.addEventListener('click',function(){nx.remove();show(i+1);var last=box.lastChild;if(last&&last.scrollIntoView)last.scrollIntoView({behavior:reduce?'auto':'smooth',block:'start'})});
+          el.appendChild(nx);
+        }else{
+          var f=document.createElement('div');f.className='cfinal';
+          f.innerHTML='<b>Score : '+score+' sur '+C.steps.length+' au premier choix.</b> '+C.fin;
+          el.appendChild(f);
+        }
+      });
+      opts.appendChild(b);return b;
+    });
+    box.appendChild(el);
+  }
+  show(0);
+}
+CASES.forEach(function(c,i){runCase(document.getElementById('case'+i),c)});
+
+/* ---------- QCM ---------- */
+var QCM=[
+ {q:'Une femme de 82 ans présente des vomissements et une occlusion du grêle. L’ASP montre une aérobilie et une image calcifiée ectopique. Quelle est la cause ?',m:false,o:[
+  ['Occlusion sur bride',0,'Elle ne donne pas d’aérobilie ; un antécédent de chirurgie serait attendu.'],
+  ['Hernie étranglée',0,'Elle se reconnaît à une tuméfaction d’un orifice, absente ici.'],
+  ['Iléus biliaire',1,'Aérobilie, occlusion du grêle et calcul ectopique : triade de Rigler.'],
+  ['Volvulus du sigmoïde',0,'C’est une occlusion colique, avec une anse en U inversé.'],
+  ['Cancer du côlon gauche',0,'Il donne une occlusion colique avec des NHA périphériques, sans aérobilie.']]},
+ {q:'Quel est le terrain typique d’un volvulus du sigmoïde ?',m:false,o:[
+  ['Sujet âgé, constipé chronique, souvent institutionnalisé',1,'Le dolichosigmoïde et la constipation chronique favorisent la torsion.'],
+  ['Adulte jeune sportif',0,'Rien n’évoque un terrain favorisant.'],
+  ['Nourrisson de moins de 2 ans',0,'C’est le terrain de l’invagination (module 3).'],
+  ['Femme jeune sans antécédent',0,'Pas de terrain favorisant.'],
+  ['Patient opéré récemment d’une appendicectomie',0,'C’est le terrain de la bride ou de l’iléus postopératoire.']]},
+ {q:'Quel signe radiologique évoque un volvulus du sigmoïde à l’ASP ?',m:false,o:[
+  ['Une anse sigmoïdienne dilatée en U inversé (« grain de café »)',1,'Les deux branches convergent vers le pelvis.'],
+  ['Des NHA multiples, centraux, plus larges que hauts',0,'C’est l’occlusion du grêle.'],
+  ['Un pneumopéritoine',0,'Il évoque une perforation.'],
+  ['Une aérobilie',0,'Elle évoque l’iléus biliaire.'],
+  ['Un ASP strictement normal',0,'L’anse sigmoïdienne dilatée est en général bien visible.']]},
+ {q:'Un volvulus du sigmoïde sans signe de gravité relève de :',m:false,o:[
+  ['Détorsion endoscopique puis sigmoïdectomie programmée',1,'La détorsion lève l’occlusion et juge de la viabilité ; la chirurgie à froid prévient la récidive.'],
+  ['Laxatifs et lavements évacuateurs',0,'Contre-indiqués : risque de perforation, sans détorsion.'],
+  ['Surveillance simple sans geste',0,'L’anse fermée risque la nécrose.'],
+  ['Détorsion endoscopique seule puis sortie',0,'La récidive est fréquente sans chirurgie.'],
+  ['Colectomie totale systématique',0,'Disproportionnée en première intention.']]},
+ {q:'À propos de la hernie étranglée, quelles propositions sont exactes ?',m:true,o:[
+  ['La tuméfaction est douloureuse et irréductible.',1,'C’est le signe central.'],
+  ['Le taxis est indiqué même en cas de signes d’ischémie.',0,'Faux : il est contre-indiqué en cas de suspicion de souffrance de l’anse.'],
+  ['La hernie de Richter peut donner une ischémie sans occlusion complète.',1,'Seule une partie de la paroi de l’anse est pincée.'],
+  ['La hernie crurale est facile à reconnaître chez la femme âgée.',0,'Faux : elle est petite et se manque facilement.'],
+  ['L’étranglement est une urgence chirurgicale.',1,'La vascularisation de l’anse est entravée : nécrose possible.']]},
+ {q:'À propos de l’occlusion sur bride, quelle proposition est exacte ?',m:false,o:[
+  ['Une cicatrice abdominale oriente vers une bride.',1,'Le cours demande de la chercher à l’inspection.'],
+  ['L’absence de cicatrice élimine une bride.',0,'Faux : il existe des brides congénitales ou inflammatoires.'],
+  ['Le lavement baryté est l’examen de choix.',0,'Faux : le scanner est l’examen de référence quand il est disponible.'],
+  ['Le traitement est toujours chirurgical et immédiat.',0,'Faux : un traitement conservateur surveillé est possible sans signe de gravité.'],
+  ['Elle ne provoque jamais de strangulation.',0,'Faux : un anneau ou une brèche créée par une bride étrangle l’anse.']]},
+ {q:'Pourquoi les cancers du côlon gauche se révèlent-ils plus souvent par une occlusion ?',m:false,o:[
+  ['La lumière y est plus étroite et les selles plus solides',1,'La sténose ferme plus facilement la lumière.'],
+  ['La vascularisation y est pauvre',0,'Ce n’est pas la raison de l’occlusion.'],
+  ['Les tumeurs y sont toujours bourgeonnantes',0,'L’aspect de la tumeur n’explique pas la fréquence.'],
+  ['Le côlon gauche est moins innervé',0,'L’innervation n’intervient pas ici.'],
+  ['Les selles y sont plus liquides',0,'Au contraire, elles y sont plus solides.']]},
+ {q:'Quel est le risque majeur d’une occlusion colique avec une valvule iléocæcale continente ?',m:false,o:[
+  ['Perforation diastatique du cæcum',1,'Le côlon d’amont devient une anse fermée : le cæcum, le plus large, cède le premier (loi de Laplace).'],
+  ['Hémorragie digestive massive',0,'Ce n’est pas la complication caractéristique.'],
+  ['Pancréatite aiguë',0,'Sans rapport.'],
+  ['Cholécystite aiguë',0,'Sans rapport.'],
+  ['Hernie étranglée',0,'Sans rapport avec la valvule iléocæcale.']]},
+ {q:'Que comprend la triade de Rigler ?',m:true,o:[
+  ['Une aérobilie',1,'Air dans les voies biliaires.'],
+  ['Une occlusion du grêle',1,'Obstruction du grêle par le calcul.'],
+  ['Un calcul biliaire ectopique visible',1,'Il est visible s’il est calcifié.'],
+  ['Un pneumopéritoine',0,'Il évoque une perforation.'],
+  ['Un niveau liquide dans le côlon',0,'Pas de rapport avec la triade.']]},
+ {q:'Chez un opéré, quel élément fait suspecter une complication mécanique plutôt qu’un simple iléus postopératoire ?',m:false,o:[
+  ['Un tableau qui s’aggrave ou persiste au-delà des quelques jours attendus, avec douleur croissante ou fièvre',1,'L’iléus postopératoire est attendu et se résout ; l’aggravation fait chercher une bride, une hernie interne ou une autre complication.'],
+  ['Une absence de bruits dans les premières heures',0,'C’est l’aspect attendu de l’iléus postopératoire.'],
+  ['Une reprise progressive du transit',0,'Elle va dans le sens d’un iléus qui se résout.'],
+  ['Un météorisme modéré et indolore au premier jour',0,'Compatible avec un iléus postopératoire.'],
+  ['Une kaliémie normale',0,'Elle n’oriente pas vers une complication mécanique.']]},
+ {q:'Quel est le traitement habituel de l’iléus biliaire ?',m:false,o:[
+  ['Entérolithotomie avec recherche d’un second calcul, geste biliaire selon l’état du patient',1,'On lève d’abord l’obstacle, puis on discute la fistule et la vésicule.'],
+  ['Traitement médical seul',0,'Le calcul ne passera pas spontanément.'],
+  ['Cholécystectomie seule sans lever l’obstacle',0,'L’occlusion persisterait.'],
+  ['Lavement évacuateur',0,'L’obstacle est dans le grêle.'],
+  ['Colostomie',0,'Elle ne traite pas une obstruction du grêle.']]},
+ {q:'Un homme de 68 ans présente des rectorragies récentes, un amaigrissement et une occlusion basse avec ampoule rectale vide. Quelle est la cause probable ?',m:false,o:[
+  ['Cancer colique',1,'Après 50 ans, des signes d’alarme digestifs suivis d’une occlusion basse font suspecter un cancer jusqu’à preuve du contraire.'],
+  ['Volvulus du sigmoïde',0,'Le début serait brutal chez un sujet constipé chronique, sans amaigrissement ni rectorragies.'],
+  ['Iléus biliaire',0,'C’est une occlusion du grêle chez une femme âgée.'],
+  ['Occlusion sur bride',0,'Rien n’évoque un antécédent chirurgical.'],
+  ['Hernie étranglée',0,'Aucune tuméfaction d’un orifice n’est signalée.']]}
+];
+(function(){
+  var box=$('#qcm'),state=[];
+  function upd(){
+    var n=0,ok=0;state.forEach(function(s){if(s.done){n++;if(s.ok)ok++}});
+    $('#qScore').textContent='Score : '+ok+' sur '+n+' répondu'+(n>1?'s':'')+' (total '+QCM.length+')';
+    var v=$('#verdict');
+    if(n===QCM.length){
+      var pct=Math.round(ok/QCM.length*100),msg;
+      if(pct>=85)msg='Solide. Passe à la fiche de révision puis au module 3.';
+      else if(pct>=60)msg='Acceptable, mais pas encore sûr. Relis les rubriques « Pièges » et refais le QCM.';
+      else msg='Le socle n’est pas acquis. Reprends le tableau de synthèse et les fiches des causes où tu as perdu des points.';
+      v.style.display='block';
+      v.innerHTML='<b>Résultat final : '+ok+' sur '+QCM.length+' ('+pct+' %).</b> '+msg;
+    }else{v.style.display='none'}
+  }
+  function build(){
+    box.innerHTML='';state=[];
+    QCM.forEach(function(q,qi){
+      var card=document.createElement('div');card.className='q-card';
+      var h='<h3>'+(qi+1)+'. '+q.q+'</h3><div class="kind">'+(q.m?'Plusieurs réponses possibles':'Une seule réponse')+'</div>';
+      q.o.forEach(function(o,oi){
+        h+='<label><input type="'+(q.m?'checkbox':'radio')+'" name="q'+qi+'" value="'+oi+'">'+String.fromCharCode(65+oi)+'. '+o[0]+'<div class="ex"><b>'+(o[1]?'Juste.':'Faux.')+'</b> '+o[2]+'</div></label>';
+      });
+      h+='<button class="go" disabled>Valider</button><div class="res" aria-live="polite"></div>';
+      card.innerHTML=h;box.appendChild(card);
+      var st={done:false,ok:false};state.push(st);
+      var go=$('.go',card),inputs=$$('input',card);
+      inputs.forEach(function(i){i.addEventListener('change',function(){go.disabled=!inputs.some(function(x){return x.checked})})});
+      go.addEventListener('click',function(){
+        var good=true;
+        inputs.forEach(function(inp,oi){
+          var lab=inp.parentNode,should=!!q.o[oi][1],sel=inp.checked;
+          if(should&&sel)lab.classList.add('good');
+          else if(should&&!sel){lab.classList.add('miss');good=false}
+          else if(!should&&sel){lab.classList.add('bad');good=false}
+          inp.disabled=true;
+        });
+        card.classList.add('done');go.disabled=true;
+        st.done=true;st.ok=good;
+        var r=$('.res',card);r.className='res '+(good?'ok':'ko');
+        r.textContent=good?'Réponse exacte.':'Réponse incomplète ou fausse : lis les explications ci-dessus.';
+        upd();
+      });
+    });
+    upd();
+  }
+  $('#qReset').addEventListener('click',function(){build();$('#qcm').scrollIntoView({behavior:reduce?'auto':'smooth',block:'start'})});
+  build();
+})();
+
+/* ---------- Cartes de révision ---------- */
+var FC=[
+ ['Étiologies citées par le cours ?','Néoplasiques : cancer colorectal, tumeur grêlique. Non néoplasiques : volvulus du sigmoïde, étranglement herniaire, occlusion postopératoire.'],
+ ['Bride : mécanisme ?','Adhérence fibreuse postopératoire qui angule ou comprime l’anse (obstruction), ou l’étrangle en anneau ou en brèche (strangulation).'],
+ ['Bride : conduite ?','Réanimation et décompression. Conservateur surveillé si incomplète sans gravité ; chirurgie sans délai si strangulation ou échec.'],
+ ['Iléus postopératoire contre occlusion mécanique ?','Iléus : fonctionnel, attendu après l’opération. Mécanique : bride ou hernie interne, tableau qui s’aggrave ou persiste.'],
+ ['Hernie incarcérée contre étranglée ?','Incarcérée : irréductible. Étranglée : le collet comprime les vaisseaux de l’anse, ischémie menaçante.'],
+ ['Hernie étranglée : conduite ?','Diagnostic clinique, urgence chirurgicale, contrôle de la viabilité de l’anse, résection si nécrose. Pas de taxis si ischémie suspectée.'],
+ ['Pièges de la hernie ?','Crurale petite ; Richter sans occlusion franche ; hernie réduite avec anse ischémique.'],
+ ['Terrain du volvulus du sigmoïde ?','Sujet âgé, constipé chronique, institutionnalisé, dolichosigmoïde.'],
+ ['Signes radiologiques du volvulus ?','ASP : anse en U inversé (grain de café). TDM : signe du tourbillon. Lavement hydrosoluble : bec d’oiseau.'],
+ ['Volvulus : traitement ?','Détorsion endoscopique puis sigmoïdectomie programmée. Chirurgie urgente si nécrose, perforation, péritonite ou échec.'],
+ ['Cancer colorectal occlusif : terrain ?','Plus de 50 ans, côlon gauche plus souvent, troubles du transit récents, rectorragies, amaigrissement.'],
+ ['Danger de l’occlusion colique ?','Anse fermée si la valvule iléocæcale est continente : perforation diastatique du cæcum (loi de Laplace).'],
+ ['À ne pas faire dans l’occlusion colique ?','Laxatifs, lavements évacuateurs, coloscopie complète en urgence.'],
+ ['Iléus biliaire : mécanisme ?','Calcul volumineux passé par une fistule cholécysto-duodénale, enclavé dans l’iléon terminal : obstruction endoluminale.'],
+ ['Triade de Rigler ?','Aérobilie, occlusion du grêle, calcul ectopique.'],
+ ['Iléus biliaire : traitement ?','Entérolithotomie, recherche d’un second calcul, geste biliaire selon l’état du patient.']
+];
+(function(){
+  var box=$('#cards'),known=0;
+  FC.forEach(function(c){
+    var d=document.createElement('div');d.className='fc';
+    d.innerHTML='<div class="inner"><button class="face front" aria-label="Retourner la carte">'+c[0]+'</button><div class="face back"><div>'+c[1]+'</div><button class="k" aria-pressed="false">Je maîtrise</button></div></div>';
+    $('.front',d).addEventListener('click',function(){d.classList.add('flipped')});
+    $('.back',d).addEventListener('click',function(e){if(e.target.className==='k')return;d.classList.remove('flipped')});
+    $('.k',d).addEventListener('click',function(e){
+      var b=e.currentTarget,on=b.getAttribute('aria-pressed')!=='true';
+      b.setAttribute('aria-pressed',on?'true':'false');b.textContent=on?'Maîtrisée':'Je maîtrise';
+      d.classList.toggle('known',on);known+=on?1:-1;
+      $('#fcScore').textContent=known+' carte'+(known>1?'s':'')+' maîtrisée'+(known>1?'s':'')+' sur '+FC.length;
+    });
+    box.appendChild(d);
+  });
+  $('#fcScore').textContent='0 carte maîtrisée sur '+FC.length;
+})();
+})();
+</script>
+</body>
+</html>
